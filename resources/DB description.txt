@@ -1,0 +1,24 @@
+Структура схемы:
+1. Lessons_registrations (Записи на занятия):
+	id,
+	lesson_id,
+	user_id
+2. Lessons (Список занятий):
+	id,
+	choach_id,
+	description - описание занятия,
+	date_time - дата и время занятия,
+	places - всего мест на занятие,
+	occupied_places - занятые места на занятие
+3. Instructors (Инструкторы):
+	id,
+	bio - информация об инструкторе,
+	phone_number
+4. Users (Пользователи):
+	id,
+	name,
+	telegram_id
+5. Users_role (Роли пользователей):
+	id, 
+	user_id,
+	role - роль пользователя: 0 - обычный пользователь, 1 - администратор
