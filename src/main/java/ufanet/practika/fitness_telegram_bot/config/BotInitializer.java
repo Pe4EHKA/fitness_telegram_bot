@@ -1,5 +1,6 @@
 package ufanet.practika.fitness_telegram_bot.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -9,6 +10,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 
+@Slf4j
 @Component
 public class BotInitializer {
 
@@ -22,6 +24,7 @@ public class BotInitializer {
             telegramBotsApi.registerBot(bot);
         } catch (TelegramApiException e) {
             // будем писать логи
+            log.error(e.getMessage(), e);
         }
     }
 
