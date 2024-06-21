@@ -18,8 +18,8 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ufanet.practika.fitness_telegram_bot.config.BotConfig;
-import ufanet.practika.fitness_telegram_bot.model.User;
-import ufanet.practika.fitness_telegram_bot.model.UserRepository;
+import ufanet.practika.fitness_telegram_bot.entity.User;
+import ufanet.practika.fitness_telegram_bot.repository.UserRepository;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -48,10 +48,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         this.config = config;
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "get a welcome message"));
+        listOfCommands.add(new BotCommand("/register", "register your self in database"));
         listOfCommands.add(new BotCommand("/mydata", "get your data stored in the database"));
         listOfCommands.add(new BotCommand("/deletedata", "delete your data from database"));
-        listOfCommands.add(new BotCommand("help", "info how to use this bot"));
-        listOfCommands.add(new BotCommand("/settings", "set your preferences"));
+        listOfCommands.add(new BotCommand("/help", "info how to use this bot"));
+//        listOfCommands.add(new BotCommand("/settings", "set your preferences"));
         try {
             execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         } catch (TelegramApiException e) {
@@ -87,6 +88,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                     case "/register":
                         register(chatId);
                         break;
+                    case "/mydata":
+                        getAllDataUser(chatId);
+                        break;
                     default:
                         prepareAndSendMessage(chatId, "Sorry, command was not recognized");
                 }
@@ -105,6 +109,18 @@ public class TelegramBot extends TelegramLongPollingBot {
                 executeEditMessage(text, chatId, messageId);
             }
         }
+    }
+
+    private void getAllDataUser(long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        if (userRepository.findByChatId(chatId).isEmpty()) {
+            message.setText("You are not registered yet");
+        } else {
+            User user = userRepository.findByChatId(chatId).get();
+            message.setText(user.toString());
+        }
+        executeMessage(message);
     }
 
     private void register(long chatId) {
@@ -138,15 +154,15 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 
     private void registerUser(Message msg) {
-        if (userRepository.findById(msg.getChatId()).isEmpty()) {
+        if (userRepository.findByChatId(msg.getChatId()).isEmpty()) {
             var chatId = msg.getChatId();
             var chat = msg.getChat();
 
             User user = new User();
             user.setChatId(chatId);
+            user.setTelegramUserName(msg.getChat().getUserName());
             user.setFirstName(chat.getFirstName());
             user.setLastName(chat.getLastName());
-            user.setUserName(chat.getUserName());
             user.setRegistrationDate(new Timestamp(System.currentTimeMillis()));
 
             userRepository.save(user);
