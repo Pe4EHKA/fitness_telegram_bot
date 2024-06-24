@@ -15,19 +15,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "first_Name", nullable = false)
-    private String firstName;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "last_Name", nullable = false)
-    private String lastName;
-
-    @Column(name = "telegram_User_Name", nullable = false)
+    @Column(name = "telegram_user_name", nullable = false)
     private String telegramUserName;
 
     @Column(name = "chat_Id", nullable = false)
     private Long chatId;
 
-    @Column(name = "bio")
+    @Column(name = "bio", nullable = true)
     private String bio;
 
     @Column(name = "registration_Date")
@@ -44,8 +41,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
                 ", userName='" + telegramUserName + '\'' +
                 '}';
     }
