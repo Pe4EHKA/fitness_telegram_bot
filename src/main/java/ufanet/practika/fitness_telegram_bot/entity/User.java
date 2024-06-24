@@ -15,26 +15,26 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "firstName", nullable = false)
+    @Column(name = "first_Name", nullable = false)
     private String firstName;
 
-    @Column(name = "lastName", nullable = false)
+    @Column(name = "last_Name", nullable = false)
     private String lastName;
 
-    @Column(name = "telegramUserName", nullable = false)
+    @Column(name = "telegram_User_Name", nullable = false)
     private String telegramUserName;
 
-    @Column(name = "chatId", nullable = false)
+    @Column(name = "chat_Id", nullable = false)
     private Long chatId;
 
     @Column(name = "bio")
     private String bio;
 
-    @Column(name = "registrationDate")
+    @Column(name = "registration_Date")
     private Timestamp registrationDate;
 
-    @OneToMany(mappedBy = "user")
-    private Set<UserRole> userRoles;
+    @OneToOne(mappedBy = "user")
+    private UserRole userRoles;
 
     @OneToMany(mappedBy = "user")
     private Set<LessonRegistration> lessonRegistrations;

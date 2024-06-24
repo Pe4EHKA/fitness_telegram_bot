@@ -31,6 +31,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ClientService clientService;
     final BotConfig config;
 
     static final String HELP_TEXT = "This bot is created to demonstrate Spring capabilities of Telegram Bots.\n\n" +
