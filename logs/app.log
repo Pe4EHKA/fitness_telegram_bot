@@ -1,0 +1,1582 @@
+2024-06-21 10:17:44,672 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34335 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 10:17:44,677 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 10:17:44,677 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 10:17:44,891 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 10:17:44,919 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2024-06-21 10:17:45,092 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 10:17:45,126 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 10:17:45,144 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 10:17:45,306 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 10:17:45,320 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 10:17:45,435 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 10:17:45,436 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 10:17:45,452 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 10:17:45,982 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 10:17:46,006 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:17:47,487 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.987 seconds (process running for 3.546)
+2024-06-21 10:17:49,049 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Registered user: User{chatId=741063739, firstName='Валерий', lastName='Батурин', userName='Pe4EHKA', registrationDate=2024-06-21 10:17:49.032}
+2024-06-21 10:17:49,071 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 10:20:55,479 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:20:55,483 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 10:20:55,486 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 10:29:38,904 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34436 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 10:29:38,905 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 10:29:38,905 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 10:29:39,070 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 10:29:39,097 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interface.
+2024-06-21 10:29:39,239 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 10:29:39,264 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 10:29:39,280 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 10:29:39,413 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 10:29:39,429 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 10:29:39,542 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 10:29:39,543 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 10:29:39,555 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 10:29:40,018 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 10:29:40,040 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:29:41,632 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.862 seconds (process running for 3.285)
+2024-06-21 10:29:44,302 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 10:46:15,981 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:46:15,988 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 10:46:15,991 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 10:46:18,216 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34652 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 10:46:18,217 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 10:46:18,217 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 10:46:18,414 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 10:46:18,439 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2024-06-21 10:46:18,593 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 10:46:18,624 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 10:46:18,642 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 10:46:18,791 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 10:46:18,805 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 10:46:18,907 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 10:46:18,908 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 10:46:18,922 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 10:46:19,421 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 10:46:19,443 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:46:20,678 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.617 seconds (process running for 3.043)
+2024-06-21 10:46:50,651 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 10:49:14,257 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 10:49:14,261 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 10:49:14,265 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:01:11,806 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34769 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:01:11,807 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:01:11,807 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:01:11,983 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:01:12,006 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 11:01:12,153 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:01:12,181 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:01:12,197 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:01:12,336 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:01:12,354 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:01:12,461 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:01:12,461 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:01:12,475 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:01:12,916 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:01:12,937 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:01:14,565 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.907 seconds (process running for 3.351)
+2024-06-21 11:01:15,669 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 11:08:33,068 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m50s487ms).
+2024-06-21 11:09:36,300 INFO o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 11:13:21,311 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:13:21,319 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:13:21,328 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:20:36,888 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34901 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:20:36,888 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:20:36,888 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:20:37,058 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:20:37,080 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 11:20:37,231 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:20:37,258 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:20:37,273 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:20:37,403 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:20:37,419 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:20:38,483 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 11:20:38,497 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:20:38,954 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:20:38,962 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:20:39,966 WARN o.h.e.j.s.SqlExceptionHelper [main] SQL Error: 90020, SQLState: 90020
+2024-06-21 11:20:39,966 ERROR o.h.e.j.s.SqlExceptionHelper [main] База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+2024-06-21 11:20:39,974 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 11:20:39,975 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 11:20:39,986 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 11:20:40,007 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 14 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:51)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:39)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:165)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 38 common frames omitted
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 55 common frames omitted
+2024-06-21 11:21:52,591 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34909 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:21:52,592 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:21:52,592 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:21:52,759 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:21:52,780 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-06-21 11:21:52,924 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:21:52,949 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:21:52,962 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:21:53,089 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:21:53,105 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:21:53,209 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:21:53,210 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:21:53,223 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:21:53,637 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:21:53,658 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:21:54,920 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.46 seconds (process running for 2.854)
+2024-06-21 11:22:04,434 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 11:24:17,764 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:24:17,768 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:24:17,769 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:29:17,512 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 34981 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:29:17,513 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:29:17,513 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:29:17,682 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:29:17,702 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2024-06-21 11:29:17,842 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:29:17,866 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:29:17,880 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:29:18,008 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:29:18,023 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:29:18,132 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:29:18,133 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:29:18,145 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:29:18,565 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:29:18,585 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:29:19,713 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.33 seconds (process running for 2.682)
+2024-06-21 11:30:36,831 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Registered user: User{chatId=951870394, firstName='Айрат', lastName='Габдеев', userName='RReDyy', registrationDate=2024-06-21 11:30:36.793}
+2024-06-21 11:30:36,860 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Айрат
+2024-06-21 11:31:20,609 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:31:20,611 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:31:20,614 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:31:54,645 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35004 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:31:54,645 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:31:54,645 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:31:54,813 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:31:54,833 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2024-06-21 11:31:54,970 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:31:54,995 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:31:55,008 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:31:55,131 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:31:55,146 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:31:56,205 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 11:31:56,225 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:31:56,669 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:31:56,677 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:31:56,732 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:31:56,733 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:31:56,755 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:31:57,834 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.326 seconds (process running for 3.703)
+2024-06-21 11:31:57,836 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:31:57,836 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 11:31:57,838 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:31:57,839 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:32:00,913 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35009 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:32:00,913 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:32:00,914 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:32:01,069 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:32:01,087 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2024-06-21 11:32:01,223 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:32:01,244 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:32:01,257 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:32:01,370 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:32:01,380 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:32:01,473 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:32:01,473 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:32:01,484 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:32:01,889 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:32:01,909 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:32:02,978 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.204 seconds (process running for 2.563)
+2024-06-21 11:32:06,777 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 11:32:41,365 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:32:41,370 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:32:41,380 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:52:53,279 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35197 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:52:53,279 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:52:53,279 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:52:53,503 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:52:53,525 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 11:52:53,681 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:52:53,713 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:52:53,732 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:52:53,895 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:52:53,911 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:52:54,023 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:52:54,023 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:52:54,038 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:52:54,587 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:52:54,615 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:52:56,375 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.254 seconds (process running for 3.715)
+2024-06-21 11:53:38,330 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 11:54:58,436 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:54:58,442 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 11:54:58,446 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 11:58:43,266 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35231 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 11:58:43,267 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 11:58:43,267 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 11:58:43,441 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 11:58:43,461 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-06-21 11:58:43,611 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 11:58:43,638 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 11:58:43,655 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 11:58:43,783 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 11:58:43,794 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 11:58:43,913 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 11:58:43,913 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 11:58:43,926 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 11:58:44,344 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 11:58:44,367 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 11:58:45,757 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.63 seconds (process running for 3.013)
+2024-06-21 11:59:23,876 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 12:01:00,310 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Айрат
+2024-06-21 12:35:01,551 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m17s488ms).
+2024-06-21 12:42:10,150 INFO o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:10,674 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:11,086 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:11,884 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:12,617 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:13,852 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:15,871 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:17,840 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:18,962 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m17s411ms).
+2024-06-21 12:42:21,423 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:30,334 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org
+java.net.UnknownHostException: api.telegram.org
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:42:48,789 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:43:13,366 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:43:48,695 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:44:50,398 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:45:31,800 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Connection] api.telegram.org: nodename nor servname provided, or not known
+java.net.UnknownHostException: api.telegram.org: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188)
+2024-06-21 12:46:45,315 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 12:46:45,339 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 12:46:45,351 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 12:48:07,749 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35345 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 12:48:07,749 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 12:48:07,749 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 12:48:07,915 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 12:48:07,934 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2024-06-21 12:48:08,073 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 12:48:08,098 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 12:48:08,113 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 12:48:08,238 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 12:48:08,253 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 12:48:08,363 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 12:48:08,364 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 12:48:08,378 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 12:48:08,823 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 12:48:08,844 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 12:48:10,283 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.668 seconds (process running for 3.062)
+2024-06-21 12:50:11,122 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 12:50:11,126 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 12:50:11,135 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 12:57:24,740 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35390 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 12:57:24,741 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 12:57:24,741 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 12:57:24,922 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 12:57:24,944 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-06-21 12:57:25,124 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 12:57:25,150 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 12:57:25,164 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 12:57:25,309 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 12:57:25,327 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 12:57:25,438 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 12:57:25,439 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 12:57:25,451 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 12:57:25,884 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 12:57:25,905 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 12:57:27,307 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.708 seconds (process running for 3.099)
+2024-06-21 12:57:43,064 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 12:57:49,430 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 12:57:49,433 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 12:57:49,435 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 13:01:07,260 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35417 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 13:01:07,260 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 13:01:07,260 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 13:01:07,428 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 13:01:07,446 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2024-06-21 13:01:07,585 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 13:01:07,610 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 13:01:07,623 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 13:01:07,751 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 13:01:07,766 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 13:01:07,869 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 13:01:07,870 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 13:01:07,882 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 13:01:08,306 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 13:01:08,326 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:01:09,771 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.638 seconds (process running for 3.014)
+2024-06-21 13:01:10,646 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 13:01:10,797 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 13:02:29,470 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:02:29,472 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 13:02:29,475 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 13:03:02,376 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35431 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 13:03:02,376 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 13:03:02,377 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 13:03:02,542 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 13:03:02,560 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2024-06-21 13:03:02,706 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 13:03:02,733 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 13:03:02,746 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 13:03:02,871 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 13:03:02,886 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 13:03:02,992 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 13:03:02,992 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 13:03:03,005 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 13:03:03,415 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 13:03:03,435 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:03:04,789 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.543 seconds (process running for 2.924)
+2024-06-21 13:03:13,963 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Айрат
+2024-06-21 13:07:52,816 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:07:52,832 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 13:07:52,839 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 13:45:55,131 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35690 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 13:45:55,132 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 13:45:55,132 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 13:45:55,344 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 13:45:55,366 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 13:45:55,516 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 13:45:55,548 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 13:45:55,566 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 13:45:55,731 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 13:45:55,745 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 13:45:55,868 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 13:45:55,869 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 13:45:55,883 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 13:45:56,344 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 13:45:56,375 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:45:57,732 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.763 seconds (process running for 3.256)
+2024-06-21 13:45:57,733 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:45:57,734 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 13:45:57,735 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 13:45:57,735 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 13:46:43,281 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 35799 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 13:46:43,281 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 13:46:43,282 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 13:46:43,449 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 13:46:43,468 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2024-06-21 13:46:43,610 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 13:46:43,637 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 13:46:43,655 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 13:46:43,789 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 13:46:43,801 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 13:46:43,908 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 13:46:43,909 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 13:46:43,922 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 13:46:44,344 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 13:46:44,365 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:46:45,557 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.41 seconds (process running for 2.782)
+2024-06-21 13:46:50,387 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 13:47:50,363 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 13:47:50,367 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 13:47:50,370 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 14:28:29,715 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36087 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 14:28:29,716 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 14:28:29,716 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 14:28:29,913 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 14:28:29,937 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 14:28:30,094 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 14:28:30,126 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 14:28:30,144 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 14:28:30,302 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 14:28:30,318 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 14:28:30,440 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 14:28:30,441 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 14:28:30,455 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 14:28:30,969 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 14:28:30,993 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:28:32,271 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.723 seconds (process running for 3.136)
+2024-06-21 14:28:35,919 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 14:31:50,002 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:31:50,003 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 14:31:50,022 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 14:31:52,080 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36125 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 14:31:52,081 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 14:31:52,081 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 14:31:52,268 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 14:31:52,291 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 14:31:52,436 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 14:31:52,464 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 14:31:52,479 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 14:31:52,609 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 14:31:52,622 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 14:31:52,739 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 14:31:52,740 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 14:31:52,753 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 14:31:53,224 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 14:31:53,247 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:31:54,364 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.431 seconds (process running for 2.785)
+2024-06-21 14:34:37,546 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:34:37,552 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 14:34:37,556 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 14:36:18,064 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36143 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 14:36:18,065 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 14:36:18,065 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 14:36:18,223 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 14:36:18,243 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2024-06-21 14:36:18,379 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 14:36:18,406 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 14:36:18,420 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 14:36:18,546 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 14:36:18,561 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 14:36:18,663 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 14:36:18,664 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 14:36:18,676 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 14:36:19,107 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 14:36:19,129 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:36:20,403 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.47 seconds (process running for 2.816)
+2024-06-21 14:36:47,187 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 14:36:47,191 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 14:36:47,195 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:23:27,134 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36935 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:23:27,135 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:23:27,135 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:23:27,351 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:23:27,381 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2024-06-21 16:23:27,549 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:23:27,586 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:23:27,605 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:23:27,793 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:23:27,809 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:23:28,875 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 16:23:28,889 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:23:29,455 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:23:29,464 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:23:30,469 WARN o.h.e.j.s.SqlExceptionHelper [main] SQL Error: 90020, SQLState: 90020
+2024-06-21 16:23:30,469 ERROR o.h.e.j.s.SqlExceptionHelper [main] База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+2024-06-21 16:23:30,474 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 16:23:30,475 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 16:23:30,479 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 16:23:30,489 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 14 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:51)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:39)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:165)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 38 common frames omitted
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 55 common frames omitted
+2024-06-21 16:23:52,130 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36948 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:23:52,131 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:23:52,131 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:23:52,293 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:23:52,315 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 16:23:52,456 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:23:52,482 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:23:52,496 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:23:52,620 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:23:52,631 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:23:52,728 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:23:52,729 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:23:52,742 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:23:53,231 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:23:53,265 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:23:55,729 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.723 seconds (process running for 4.08)
+2024-06-21 16:24:04,351 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Registered user: User{id=1, firstName='Валерий', lastName='Батурин', userName='Pe4EHKA', lessonRegistrations=null}
+2024-06-21 16:24:04,372 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:24:53,705 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:24:53,708 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:24:53,710 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:25:25,368 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36961 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:25:25,369 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:25:25,369 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:25:25,539 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:25:25,560 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 16:25:25,696 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:25:25,720 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:25:25,734 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:25:25,851 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:25:25,865 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:25:25,955 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:25:25,956 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:25:25,968 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:25:26,451 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:25:26,486 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:25:27,716 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.482 seconds (process running for 2.848)
+2024-06-21 16:25:31,463 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:25:31,464 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:25:31,467 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:26:32,825 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36970 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:26:32,826 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:26:32,826 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:26:32,991 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:26:33,013 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 16:26:33,154 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:26:33,179 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:26:33,192 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:26:33,314 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:26:33,330 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:26:34,380 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 16:26:34,404 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:26:34,944 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:26:34,952 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:26:35,016 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:26:35,016 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:26:35,042 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:26:36,138 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.454 seconds (process running for 3.812)
+2024-06-21 16:26:36,139 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:26:36,139 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 16:26:36,140 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:26:36,150 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'springApplicationAdminRegistrar': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:220)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:265)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:222)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:451)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:384)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:92)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:78)
+	at org.springframework.boot.context.event.EventPublishingRunListener.started(EventPublishingRunListener.java:104)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$started$5(SpringApplicationRunListeners.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.started(SpringApplicationRunListeners.java:76)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 16:26:36,359 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:26:38,288 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36975 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:26:38,289 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:26:38,289 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:26:38,455 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:26:38,476 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2024-06-21 16:26:38,614 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:26:38,635 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:26:38,647 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:26:38,760 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:26:38,771 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:26:38,873 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:26:38,874 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:26:38,885 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:26:39,363 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:26:39,393 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:26:40,650 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.5 seconds (process running for 2.859)
+2024-06-21 16:26:42,331 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Registered user: User{id=1, firstName='Валерий', lastName='Батурин', userName='Pe4EHKA', lessonRegistrations=null}
+2024-06-21 16:26:42,351 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:26:45,515 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:26:45,517 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:26:45,526 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:27:02,867 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36982 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:27:02,868 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:27:02,868 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:27:03,037 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:27:03,060 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 16:27:03,201 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:27:03,225 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:27:03,238 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:27:03,356 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:27:03,367 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:27:03,467 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:27:03,468 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:27:03,479 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:27:03,958 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:27:03,984 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:27:05,229 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.509 seconds (process running for 2.897)
+2024-06-21 16:27:10,584 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:27:10,591 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:27:10,596 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:29:03,157 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 36996 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:29:03,157 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:29:03,157 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:29:03,327 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:29:03,349 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 16:29:03,486 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:29:03,510 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:29:03,523 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:29:03,658 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:29:03,669 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:29:04,731 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 16:29:04,757 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:29:05,289 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:29:05,298 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:29:06,304 WARN o.h.e.j.s.SqlExceptionHelper [main] SQL Error: 90020, SQLState: 90020
+2024-06-21 16:29:06,305 ERROR o.h.e.j.s.SqlExceptionHelper [main] База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+2024-06-21 16:29:06,313 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 16:29:06,314 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+2024-06-21 16:29:06,324 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-21 16:29:06,342 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 14 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:51)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.extract.spi.ExtractionContext.getQueryResults(ExtractionContext.java:43)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:39)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:66)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:60)
+	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:185)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:98)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже используется: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: "/Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:165)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 38 common frames omitted
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/pe4ehka/java-projects/fitness_telegram_bot/db/fitness_telegram_bot_db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 55 common frames omitted
+2024-06-21 16:29:15,062 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37008 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:29:15,063 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:29:15,063 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:29:15,230 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:29:15,250 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-06-21 16:29:15,384 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:29:15,405 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:29:15,418 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:29:15,530 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:29:15,544 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:29:15,654 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:29:15,654 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:29:15,665 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:29:16,157 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:29:16,184 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:29:17,462 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.525 seconds (process running for 2.88)
+2024-06-21 16:29:19,952 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Executor] failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.toString(PersistentSet.java:297)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at ufanet.practika.fitness_telegram_bot.entity.User.toString(User.java:45)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.getAllDataUser(TelegramBot.java:121)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+2024-06-21 16:29:54,556 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Executor] failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.toString(PersistentSet.java:297)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at ufanet.practika.fitness_telegram_bot.entity.User.toString(User.java:45)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.getAllDataUser(TelegramBot.java:121)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+2024-06-21 16:29:56,533 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:29:58,368 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Executor] failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.toString(PersistentSet.java:297)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at ufanet.practika.fitness_telegram_bot.entity.User.toString(User.java:45)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.getAllDataUser(TelegramBot.java:121)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+2024-06-21 16:30:17,380 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:30:17,382 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:30:17,398 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:30:19,910 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37020 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:30:19,911 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:30:19,911 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:30:20,096 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:30:20,121 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2024-06-21 16:30:20,275 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:30:20,302 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:30:20,317 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:30:20,464 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:30:20,477 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:30:20,606 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:30:20,607 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:30:20,620 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:30:21,178 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:30:21,222 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:30:22,622 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.861 seconds (process running for 3.669)
+2024-06-21 16:31:43,281 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:31:43,285 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:31:43,291 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:32:18,699 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37029 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:32:18,699 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:32:18,700 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:32:18,884 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:32:18,908 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2024-06-21 16:32:19,049 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:32:19,075 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:32:19,089 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:32:19,214 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:32:19,230 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:32:20,292 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at ufanet.practika.fitness_telegram_bot.FitnessTelegramBotApplication.main(FitnessTelegramBotApplication.java:10)
+2024-06-21 16:32:20,317 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:32:20,881 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:32:20,890 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:32:20,961 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:32:20,962 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:32:20,989 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:32:23,517 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37035 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:32:23,518 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:32:23,518 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:32:23,669 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:32:23,690 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-06-21 16:32:23,828 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:32:23,849 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:32:23,861 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:32:23,971 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:32:23,981 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:32:24,085 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:32:24,086 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:32:24,097 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:32:24,589 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:32:24,614 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:32:26,592 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.203 seconds (process running for 3.553)
+2024-06-21 16:32:27,445 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Registered user: User{id=1, firstName='Валерий', lastName='Батурин', userName='Pe4EHKA', lessonRegistrations=null}
+2024-06-21 16:32:27,465 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:32:29,438 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Executor] failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.toString(PersistentSet.java:297)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at ufanet.practika.fitness_telegram_bot.entity.User.toString(User.java:45)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.getAllDataUser(TelegramBot.java:121)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+2024-06-21 16:32:35,705 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:32:35,707 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:32:35,712 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:32:44,803 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37041 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:32:44,804 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:32:44,804 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:32:44,989 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:32:45,015 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2024-06-21 16:32:45,172 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:32:45,198 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:32:45,214 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:32:45,355 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:32:45,369 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:32:45,488 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:32:45,489 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:32:45,502 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:32:46,030 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:32:46,067 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:32:47,315 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 2.667 seconds (process running for 3.116)
+2024-06-21 16:32:48,719 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:37:04,469 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m47s797ms).
+2024-06-21 16:37:04,472 ERROR o.t.t.u.DefaultBotSession [fitnes_telegram_bot Telegram Executor] failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+org.hibernate.LazyInitializationException: failed to lazily initialize a collection of role: ufanet.practika.fitness_telegram_bot.entity.User.lessonRegistrations: could not initialize proxy - no Session
+	at org.hibernate.collection.spi.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:634)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:217)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.PersistentSet.toString(PersistentSet.java:297)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at ufanet.practika.fitness_telegram_bot.entity.User.toString(User.java:45)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.getAllDataUser(TelegramBot.java:121)
+	at ufanet.practika.fitness_telegram_bot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+2024-06-21 16:37:04,530 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:37:04,533 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:37:04,535 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-06-21 16:37:10,518 INFO u.p.f.FitnessTelegramBotApplication [main] Starting FitnessTelegramBotApplication using Java 21.0.2 with PID 37078 (/Users/pe4ehka/java-projects/fitness_telegram_bot/target/classes started by pe4ehka in /Users/pe4ehka/java-projects/fitness_telegram_bot)
+2024-06-21 16:37:10,518 DEBUG u.p.f.FitnessTelegramBotApplication [main] Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-06-21 16:37:10,519 INFO u.p.f.FitnessTelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-21 16:37:10,681 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-21 16:37:10,703 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2024-06-21 16:37:10,858 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-21 16:37:10,884 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-21 16:37:10,898 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2024-06-21 16:37:11,021 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-21 16:37:11,033 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-21 16:37:11,140 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./db/fitness_telegram_bot_db user=ROOT
+2024-06-21 16:37:11,141 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-21 16:37:11,153 WARN o.h.o.deprecation [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-21 16:37:11,676 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-21 16:37:11,702 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:37:13,969 INFO u.p.f.FitnessTelegramBotApplication [main] Started FitnessTelegramBotApplication in 3.596 seconds (process running for 4.007)
+2024-06-21 16:37:14,749 INFO u.p.f.s.TelegramBot [fitnes_telegram_bot Telegram Executor] Replied to user: Валерий
+2024-06-21 16:37:37,496 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-21 16:37:37,498 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-21 16:37:37,500 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
