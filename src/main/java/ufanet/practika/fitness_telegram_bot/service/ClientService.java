@@ -7,6 +7,7 @@ import ufanet.practika.fitness_telegram_bot.repository.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,6 +53,12 @@ public class ClientService {
     public boolean isExistingUser(Long chatId){
         return userRepository.existsByChatId(chatId);
     }
+
+    public Optional<User> getUser(Long chatId){
+        return userRepository.findByChatId(chatId);
+    }
+
+    // Временный метод, для удобства разработки: проверяет существование роли
     public boolean isExistingRole(String role){
         return roleRepository.existsByRole(role);
     }

@@ -26,6 +26,7 @@ import ufanet.practika.fitness_telegram_bot.repository.UserRepository;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Component
@@ -37,7 +38,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private ClientService clientService;
     final BotConfig config;
 
-    static final String HELP_TEXT = "This bot is created to demonstrate Spring capabilities of Telegram Bots.\n\n" +
+    static final String HELP_TEXT = "This bot is created to administrate your fitness training.\n\n" +
             "You can execute from main menu on the left or by typing command\n\n" +
             "Type /start to see welcome message\n\n" +
             "Type /mydata to see data stored about yourself\n\n" +
@@ -53,7 +54,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         // Настройка команд, которые будут доступны в меню
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "get a welcome message"));
-        listOfCommands.add(new BotCommand("/register", "register your self in database"));
         listOfCommands.add(new BotCommand("/mydata", "get your data stored in the database"));
         listOfCommands.add(new BotCommand("/help", "info how to use this bot"));
         try {
@@ -95,14 +95,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                     case "/help":
                         prepareAndSendMessage(chatId, HELP_TEXT);
                         break;
-                    case "/register":
-                        register(update.getMessage());
-                        break;
                     case "/mydata":
                         getAllDataUser(chatId);
                         break;
                     default:
-                        prepareAndSendMessage(chatId, "Sorry, command was not recognized");
+                        prepareAndSendMessage(chatId, "Простите, команда не распознана");
                 }
             }
             /*
@@ -113,30 +110,21 @@ public class TelegramBot extends TelegramLongPollingBot {
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             long chatId = update.getCallbackQuery().getMessage().getChatId();
 
-            if (callBackData.equals(YES_BUTTON)){
-                String text = "You pressed YES button";
-                executeEditMessage(text, chatId, messageId);
 
-            } else if (callBackData.equals(NO_BUTTON)) {
-                String text = "You pressed NO button";
-                executeEditMessage(text, chatId, messageId);
-            }
         }
     }
 
-    /*
-    Получение данных о пользователе по его chat id
-     */
     private void getAllDataUser(long chatId) {
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        if (userRepository.findByChatId(chatId).isEmpty()) {
-            message.setText("You are not registered yet");
-        } else {
-            User user = userRepository.findByChatId(chatId).get();
-            message.setText(user.toString());
+        Optional<User> user = clientService.getUser(chatId);
+        String textToSend;
+        if (user.isPresent()) {
+            textToSend = user.get().toString();
+            prepareAndSendMessage(chatId, textToSend);
         }
-        executeMessage(message);
+        else{
+            textToSend = "Вы не зарегистрированы";
+            prepareAndSendMessage(chatId, textToSend);
+        }
     }
 
     /*
@@ -180,23 +168,18 @@ public class TelegramBot extends TelegramLongPollingBot {
     private void startCommandReceived(long chatId, String name)  {
         String answer = EmojiParser.parseToUnicode("Привет, " + name + ", рад тебя видеть!" + " :blush:");
         log.info("Replied to user: " + name);
-        startCommandMessage(chatId, answer);
+        prepareAndSendMessage(chatId, answer);
+    }
+    private void setButtons() {
+        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        inlineKeyboardMarkup.setKeyboard(buttons);
     }
 
     /*
     Отправка сообщения
      */
     private void prepareAndSendMessage(long chatId, String textToSend) {
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        message.setText(textToSend);
-        executeMessage(message);
-    }
-
-    /*
-    Отправка сообщения после нажатия /start
-     */
-    private void startCommandMessage(long chatId, String textToSend)  {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText(textToSend);
@@ -227,5 +210,4 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.error(ERROR_MESSAGE + e.getMessage());
         }
     }
-
 }
