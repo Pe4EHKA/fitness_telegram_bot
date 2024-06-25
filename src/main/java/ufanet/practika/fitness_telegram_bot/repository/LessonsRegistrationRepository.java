@@ -7,10 +7,11 @@ import ufanet.practika.fitness_telegram_bot.entity.LessonRegistration;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface LessonsRegistrationRepository extends JpaRepository<LessonRegistration, Integer> {
     List<LessonRegistration> findByUser(User user);
-
+    Optional<LessonRegistration> findByLessonAndUser(Lesson lesson, User user);
     boolean existsByUserAndLesson(User user, Lesson lesson);
 }

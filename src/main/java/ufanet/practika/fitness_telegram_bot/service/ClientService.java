@@ -5,31 +5,28 @@ import org.springframework.stereotype.Service;
 import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.*;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private LessonsRegistrationRepository lessonsRegistrationRepository;
-    @Autowired
-    private LessonRepository lessonRepository;
-    @Autowired
-    private UserRoleRepository userRoleRepository;
-    @Autowired
-    private RoleRepository roleRepository;
+    private final UserRepository userRepository;
+    private final LessonsRegistrationRepository lessonsRegistrationRepository;
+    private final LessonRepository lessonRepository;
+    private final UserRoleRepository userRoleRepository;
+    private final RoleRepository roleRepository;
 
-    public List<Lesson> getAvailableLessonsByDate(int date) {
-        List<Lesson> availableLessons = lessonRepository.findByStartDateTime_Date(date);
-        return availableLessons.stream()
-                .filter(el -> el.getOccupiedPlaces() < el.getPlaces())
-                .collect(Collectors.toList());
+    @Autowired
+    public ClientService(UserRepository userRepository,
+                         LessonsRegistrationRepository lessonsRegistrationRepository,
+                         LessonRepository lessonRepository,
+                         UserRoleRepository userRoleRepository,
+                         RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.lessonsRegistrationRepository = lessonsRegistrationRepository;
+        this.lessonRepository = lessonRepository;
+        this.userRoleRepository = userRoleRepository;
+        this.roleRepository = roleRepository;
     }
     /*
     Выводит все занятия конкретного клиента
@@ -41,6 +38,7 @@ public class ClientService {
     public Lesson getLesson(long id){
         return lessonRepository.findById(id);
     }
+
     public void singUpLesson(Lesson lesson, User user) {
         LessonRegistration lessonRegistration = new LessonRegistration();
         lessonRegistration.setLesson(lesson);
@@ -49,7 +47,16 @@ public class ClientService {
         lessonsRegistrationRepository.save(lessonRegistration);
     }
     public void cancelLesson(User user, Lesson lesson) {
-        if (lessonsRegistrationRepository.existsByUserAndLesson(user, lesson)) {
+        Optional<LessonRegistration> lessonRegistration = lessonsRegistrationRepository.findByLessonAndUser(lesson, user);
+        if (lessonRegistration.isPresent()) {
+            Lesson lessonChanged = lessonRegistration.get().getLesson();
+            Integer occupaiedPlaces = lessonChanged.getOccupiedPlaces();
+            lessonChanged.setOccupiedPlaces(occupaiedPlaces - 1);
+
+            lessonsRegistrationRepository.delete(lessonRegistration.get());
+            lessonRepository.save(lessonChanged);
+        }
+        /*if (lessonsRegistrationRepository.existsByUserAndLesson(user, lesson)) {
             Optional<LessonRegistration> lessonRegistrationToDelete = Optional.empty();
 
             Set<LessonRegistration> lessonRegistrationSet = lesson.getLessonRegistrations();
@@ -64,7 +71,7 @@ public class ClientService {
             lessonRegistrationToDelete.ifPresent(lessonRegistrationSet::remove);
             lesson.setOccupiedPlaces(lesson.getOccupiedPlaces() - 1);
             lessonRepository.save(lesson);
-        }
+        }*/
     }
     public void registrateUser(UserRole userRole){
         userRepository.save(userRole.getUser());

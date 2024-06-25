@@ -27,10 +27,10 @@ public class Lesson {
     private User instructor;
 
     @Column(name = "start_datetime", nullable = false)
-    private Timestamp startDateTime;
+    private LocalDateTime startDateTime;
 
     @Column(name = "end_datetime", nullable = false)
-    private Timestamp endDateTime;
+    private LocalDateTime endDateTime;
 
     @Column(name = "places", nullable = false)
     private Integer places;
