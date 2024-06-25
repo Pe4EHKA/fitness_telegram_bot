@@ -29,6 +29,7 @@ public class ClientService {
                 .filter(el -> el.getOccupiedPlaces() < el.getPlaces())
                 .collect(Collectors.toList());
     }
+
     public List<Lesson> getAllClientLessons(User user){
         List<LessonRegistration> registrations = lessonsRegistrationRepository.findByUser(user);
         return registrations.stream().map(LessonRegistration::getLesson).toList();
@@ -56,6 +57,9 @@ public class ClientService {
 
     public Optional<User> getUser(Long chatId){
         return userRepository.findByChatId(chatId);
+    }
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
     // Временный метод, для удобства разработки: проверяет существование роли

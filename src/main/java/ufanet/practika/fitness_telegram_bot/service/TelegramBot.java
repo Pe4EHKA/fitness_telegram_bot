@@ -13,15 +13,12 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ufanet.practika.fitness_telegram_bot.config.BotConfig;
 import ufanet.practika.fitness_telegram_bot.entity.Role;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.entity.UserRole;
-import ufanet.practika.fitness_telegram_bot.repository.UserRepository;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -31,9 +28,6 @@ import java.util.Optional;
 @Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
-
-    @Autowired
-    private UserRepository userRepository;
     @Autowired
     private ClientService clientService;
     final BotConfig config;
@@ -44,8 +38,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             "Type /mydata to see data stored about yourself\n\n" +
             "Type /help to see this message again";
 
-    static final String YES_BUTTON = "YES_BUTTON";
-    static final String NO_BUTTON = "NO_BUTTON";
+    static final String SCHEDULE = "Расписание";
+    static final String APPOINTMENT = "Записаться";
     static final String ERROR_MESSAGE = "Error occurred: ";
 
     public TelegramBot(BotConfig config) {
@@ -82,7 +76,7 @@ public class TelegramBot extends TelegramLongPollingBot {
              */
             if (messageText.contains("/send") && config.getOwnerId() == chatId) {
                 var textToSend = EmojiParser.parseToUnicode(messageText.substring(messageText.indexOf(" ")));
-                var users = userRepository.findAll();
+                var users = clientService.getAllUsers();
                 for (User user : users) {
                     prepareAndSendMessage(user.getChatId(), textToSend);
                 }
@@ -110,10 +104,15 @@ public class TelegramBot extends TelegramLongPollingBot {
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             long chatId = update.getCallbackQuery().getMessage().getChatId();
 
-
+            switch (callBackData) {
+                case SCHEDULE -> scheduleRequestProcessing(chatId, messageId);
+            }
         }
     }
 
+    /*
+    Получение всех данных о пользователе
+     */
     private void getAllDataUser(long chatId) {
         Optional<User> user = clientService.getUser(chatId);
         String textToSend;
@@ -162,20 +161,54 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
+    private void scheduleRequestProcessing(long chatId, long messageId){
+
+    }
     /*
     Обработка команды /start
      */
     private void startCommandReceived(long chatId, String name)  {
-        String answer = EmojiParser.parseToUnicode("Привет, " + name + ", рад тебя видеть!" + " :blush:");
+        String answer = EmojiParser.parseToUnicode("Привет, " + name + ", рад тебя видеть!"
+                + " :blush:\nЧто бы ты хотел сделать?");
         log.info("Replied to user: " + name);
-        prepareAndSendMessage(chatId, answer);
-    }
-    private void setButtons() {
-        List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        inlineKeyboardMarkup.setKeyboard(buttons);
-    }
 
+        List<String> buttons = new ArrayList<>();
+        buttons.add(SCHEDULE);
+        buttons.add(APPOINTMENT);
+
+        prepareAndSendMessage(chatId, answer, buttons);
+    }
+    /*
+    Создаёт кнопки для клавиатуры под сообщением и возвращает объект, который их содержит
+     */
+    private InlineKeyboardMarkup getButtons(List<String> buttons) {
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
+
+        for(String button : buttons) {
+            List<InlineKeyboardButton> row = new ArrayList<>();
+
+            var keyBoardButton = new InlineKeyboardButton();
+            keyBoardButton.setText(button);
+            keyBoardButton.setCallbackData(button);
+
+            row.add(keyBoardButton);
+            buttonRows.add(row);
+        }
+
+        inlineKeyboardMarkup.setKeyboard(buttonRows);
+        return inlineKeyboardMarkup;
+    }
+    /*
+    Отправка сообщения с кнопками под ним
+     */
+    private void prepareAndSendMessage(long chatId, String text, List<String> buttons) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(text);
+        message.setReplyMarkup(getButtons(buttons));
+        executeMessage(message);
+    }
     /*
     Отправка сообщения
      */
@@ -189,11 +222,12 @@ public class TelegramBot extends TelegramLongPollingBot {
     /*
     Изменяет прошлое сообщения на указанное новое
      */
-    private void executeEditMessage(String text, long chatId, long messageId) {
+    private void executeEditMessage(String text, long chatId, long messageId, InlineKeyboardMarkup markup) {
         EditMessageText message = new EditMessageText();
         message.setChatId(chatId);
         message.setText(text);
         message.setMessageId((int) messageId);
+        message.setReplyMarkup(markup);
 
         try {
             execute(message);
