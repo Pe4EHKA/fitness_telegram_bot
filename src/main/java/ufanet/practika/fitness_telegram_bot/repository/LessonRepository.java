@@ -10,4 +10,6 @@ import java.util.List;
 
 public interface LessonRepository extends JpaRepository<Lesson, Integer> {
     List<Lesson> findByStartDateTime(LocalDateTime dateTime);
+
+    boolean existsByLessonId(Integer Lesson);
 }

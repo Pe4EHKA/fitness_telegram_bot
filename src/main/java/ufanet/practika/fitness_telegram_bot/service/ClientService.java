@@ -8,6 +8,7 @@ import ufanet.practika.fitness_telegram_bot.repository.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,8 +42,23 @@ public class ClientService {
 
         lessonsRegistrationRepository.save(lessonRegistration);
     }
-    public void cancelLesson(Lesson lesson) {
-        throw new RuntimeException();
+    public void cancelLesson(User user, Lesson lesson) {
+        if (lessonsRegistrationRepository.existsByUserAndLesson(user, lesson)) {
+            Optional<LessonRegistration> lessonRegistrationToDelete = Optional.empty();
+
+            Set<LessonRegistration> lessonRegistrationSet = lesson.getLessonRegistrations();
+
+            for (LessonRegistration lessonRegistration : lessonRegistrationSet) {
+                if (lessonRegistration.getUser().equals(user)) {
+                    lessonRegistrationToDelete = Optional.of(lessonRegistration);
+                    lessonsRegistrationRepository.delete(lessonRegistration);
+                    break;
+                }
+            }
+            lessonRegistrationToDelete.ifPresent(lessonRegistrationSet::remove);
+            lesson.setOccupiedPlaces(lesson.getOccupiedPlaces() - 1);
+            lessonRepository.save(lesson);
+        }
     }
     public void registrateUser(UserRole userRole){
         userRepository.save(userRole.getUser());

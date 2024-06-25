@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -44,5 +45,20 @@ public class User {
                 ", name='" + name + '\'' +
                 ", userName='" + telegramUserName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id)
+                && Objects.equals(telegramUserName, user.telegramUserName)
+                && Objects.equals(chatId, user.chatId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, telegramUserName, chatId);
     }
 }
