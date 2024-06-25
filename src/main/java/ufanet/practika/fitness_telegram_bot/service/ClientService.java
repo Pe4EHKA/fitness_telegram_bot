@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -23,16 +24,21 @@ public class ClientService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public List<Lesson> getAvailableLessonsByDate(LocalDateTime date) {
-        List<Lesson> availableLessons = lessonRepository.findByStartDateTime(date);
+    public List<Lesson> getAvailableLessonsByDate(int date) {
+        List<Lesson> availableLessons = lessonRepository.findByStartDateTime_Date(date);
         return availableLessons.stream()
                 .filter(el -> el.getOccupiedPlaces() < el.getPlaces())
                 .collect(Collectors.toList());
     }
-
+    /*
+    Выводит все занятия конкретного клиента
+     */
     public List<Lesson> getAllClientLessons(User user){
         List<LessonRegistration> registrations = lessonsRegistrationRepository.findByUser(user);
         return registrations.stream().map(LessonRegistration::getLesson).toList();
+    }
+    public Lesson getLesson(long id){
+        return lessonRepository.findById(id);
     }
     public void singUpLesson(Lesson lesson, User user) {
         LessonRegistration lessonRegistration = new LessonRegistration();
