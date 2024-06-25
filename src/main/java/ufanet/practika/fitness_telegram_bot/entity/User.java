@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class User {
     private String bio;
 
     @Column(name = "registration_Date")
-    private Timestamp registrationDate;
+    private LocalDateTime registrationDate;
 
     @OneToOne(mappedBy = "user")
     private UserRole userRoles;

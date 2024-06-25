@@ -20,8 +20,10 @@ import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.entity.Role;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.entity.UserRole;
+import ufanet.practika.fitness_telegram_bot.repository.LessonRepository;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,18 +34,30 @@ public class TelegramBot extends TelegramLongPollingBot {
     private ClientService clientService;
     final BotConfig config;
 
-    static final String HELP_TEXT = "This bot is created to administrate your fitness training.\n\n" +
-            "You can execute from main menu on the left or by typing command\n\n" +
-            "Type /start to see welcome message\n\n" +
-            "Type /mydata to see data stored about yourself\n\n" +
-            "Type /help to see this message again";
+    static final String HELP_TEXT = """
+            This bot is created to administrate your fitness training.
+
+            You can execute from main menu on the left or by typing command
+
+            Type /start to see welcome message
+
+            Type /mydata to see data stored about yourself
+
+            Type /help to see this message again""";
 
     static final String SCHEDULE = "Посмотреть записи";
     static final String APPOINTMENT = "Записаться";
     static final String ERROR_MESSAGE = "Error occurred: ";
     static final String BACK_TO_MAIN = "Назад на главную";
-    static final String DELETE = "Удалить";
+    static final String CANCEL_LESSON = "Отменить занятие";
     static final String BACK_TO_LESSONS = "Назад к занятиям";
+
+    final DateTimeFormatter formatterByDays = DateTimeFormatter.ofPattern("dd.MM.yy");
+    final DateTimeFormatter formatterByHourAndMinutes = DateTimeFormatter.ofPattern("HH:mm");
+
+
+    @Autowired
+    private LessonRepository lessonRepository;
 
     public TelegramBot(BotConfig config) {
         super(config.getToken());
@@ -86,7 +100,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             } else {
                 switch (messageText) {
                     case "/start":
-                        register(update.getMessage());
+                        registerAndEnter(update.getMessage());
                         startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
                         break;
                     case "/help":
@@ -108,25 +122,58 @@ public class TelegramBot extends TelegramLongPollingBot {
             long chatId = update.getCallbackQuery().getMessage().getChatId();
 
             if (callBackData.equals(SCHEDULE)) {
-                clientShedule(chatId, messageId);
+                clientSchedule(chatId, messageId);
             }
+            /*
+            Берём занятия пользователя и сревяем id занятий с id переданным в callBackData
+             */
             else if(getUserLessons(chatId).stream().map(el -> el.getId().toString()).toList().contains(callBackData)) {
                 lessonAdditionalInfo(chatId, messageId, callBackData);
             }
             else if(callBackData.equals(BACK_TO_LESSONS)) {
-                clientShedule(chatId, messageId);
+                clientSchedule(chatId, messageId);
             }
             else if(callBackData.equals(BACK_TO_MAIN)) {
                 mainWindow(chatId, messageId);
+            } else if (callBackData.equals(APPOINTMENT)) {
+                chooseDayOfTraining(chatId, messageId);
+            }
+            else if(callBackData.contains(CANCEL_LESSON)){
+                cancelLesson(chatId, messageId, callBackData);
             }
         }
     }
 
+    private void chooseDayOfTraining(long chatId, long messageId) {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime afterSevenDays = now.plusDays(7);
+        List<Lesson> lessonsTraining = lessonRepository.findByStartDateTimeBetween(now, afterSevenDays);
+        Map<String, String> buttons = new LinkedHashMap<>();
+        for (Lesson lesson : lessonsTraining) {
+            buttons.put(lesson.getStartDateTime().format(formatterByDays), lesson.getStartDateTime().toString());
+        }
+        buttons.put("Назад", BACK_TO_MAIN);
+        String text = "Наше расписание занятий на неделю: ";
+        executeEditMessage(text, chatId, messageId, buttons);
+
+    }
+
+    private void cancelLesson(long chatId, long messageId, String callBackData) {
+            Optional<User> user = clientService.getUser(chatId);
+            if (user.isPresent()) {
+                String[] splitedCallBackData = callBackData.split(" ");
+                int lessonId = Integer.parseInt(splitedCallBackData[splitedCallBackData.length - 1]);
+                Lesson lesson = clientService.getLesson(lessonId);
+
+                clientService.cancelLesson(user.get(), lesson);
+                clientSchedule(chatId, messageId);
+            }
+    }
     private void lessonAdditionalInfo(long chatId, long messageId, String callBackData){
         Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
 
-        LinkedHashMap<String, String> buttons = new LinkedHashMap<>();
-        buttons.put("Удалить запись", DELETE);
+        Map<String, String> buttons = new HashMap<>();
+        buttons.put(CANCEL_LESSON, CANCEL_LESSON + " " + lesson.getId().toString());
         buttons.put("Назад", BACK_TO_LESSONS);
 
         String lessonType = lesson.getLessonType().getType();
@@ -160,20 +207,20 @@ public class TelegramBot extends TelegramLongPollingBot {
     /*
     Регистрация пользователя в БД
      */
-    private void register(Message msg) {
+    private void registerAndEnter(Message msg) {
         if(!clientService.isExistingUser(msg.getChatId())) {
             // Создание объекта пользователя
             User user = new User();
             user.setName(msg.getChat().getFirstName());
             user.setChatId(msg.getChatId());
             user.setTelegramUserName(msg.getChat().getUserName());
-            user.setRegistrationDate(new Timestamp(System.currentTimeMillis()));
+            user.setRegistrationDate(LocalDateTime.now());
 
             /*
             Написано для удобства разработки: создаёт роль, если её нет в таблице ролей.
             В конце они будут там уже записаны и этот код не понадобится
              */
-            Role role = null;
+            Role role;
             if(clientService.isExistingRole(UserRoles.CLIENT.toString())) {
                 // Получение роли пользователя
                 role = clientService.getRole(UserRoles.CLIENT.toString()); // нужно будет оставить только это
@@ -200,7 +247,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return clientLessons;
     }
 
-    private void clientShedule(long chatId, long messageId){
+    private void clientSchedule(long chatId, long messageId){
         List<Lesson> clientLessons = getUserLessons(chatId);
         String textToSend = "Твоё расписание:";
 
@@ -215,20 +262,20 @@ public class TelegramBot extends TelegramLongPollingBot {
      */
     private void startCommandReceived(long chatId, String name)  {
         String answer = EmojiParser.parseToUnicode("Привет, " + name + ", рад тебя видеть!"
-                + " :blush:\nЧто бы ты хотел сделать?");
+                + " :blush:");
         log.info("Replied to user: " + name);
         prepareAndSendMessage(chatId, answer);
 
         // Подготовка кнопок для сообщения
-        HashMap<String, String> buttons = new HashMap<>();
+        Map<String, String> buttons = new HashMap<>();
         buttons.put(SCHEDULE, SCHEDULE);
-        buttons.put(APPOINTMENT, SCHEDULE);
+        buttons.put(APPOINTMENT, APPOINTMENT);
         answer = "Выбери, что ты хочешь сделать:";
         prepareAndSendMessage(chatId, answer, buttons);
     }
     private void mainWindow(long chatId, long messageId) {
         // Подготовка кнопок для сообщения
-        Map<String, String> buttons = new LinkedHashMap<>();
+        Map<String, String> buttons = new HashMap<>();
         buttons.put(SCHEDULE, SCHEDULE);
         buttons.put(APPOINTMENT, SCHEDULE);
         String textToSend = "Выбери, что ты хочешь сделать:";
@@ -242,7 +289,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
-        for(var button : buttons.entrySet().stream().sorted().collect(Collectors.toCollection(LinkedHashSet::new))) {
+        // Множество элементом map сортируются по ключю и из нового потока создаётся LinkedHashSet
+        LinkedHashSet<Map.Entry<String, String>> values = buttons.entrySet().stream().sorted(Map.Entry.comparingByKey()).collect(Collectors.toCollection(LinkedHashSet::new));
+        for(var button : values) {
             List<InlineKeyboardButton> row = new ArrayList<>();
 
             var keyBoardButton = new InlineKeyboardButton();
@@ -259,7 +308,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     /*
     Отправка сообщения с кнопками под ним
      */
-    private void prepareAndSendMessage(long chatId, String text, HashMap<String, String> buttons) {
+    private void prepareAndSendMessage(long chatId, String text, Map<String, String> buttons) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText(text);

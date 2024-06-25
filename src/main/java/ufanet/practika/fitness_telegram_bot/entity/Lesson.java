@@ -4,8 +4,7 @@ package ufanet.practika.fitness_telegram_bot.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Time;
-import java.sql.Timestamp;
+
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -27,10 +26,10 @@ public class Lesson {
     private User instructor;
 
     @Column(name = "start_datetime", nullable = false)
-    private Timestamp startDateTime;
+    private LocalDateTime startDateTime;
 
     @Column(name = "end_datetime", nullable = false)
-    private Timestamp endDateTime;
+    private LocalDateTime endDateTime;
 
     @Column(name = "places", nullable = false)
     private Integer places;

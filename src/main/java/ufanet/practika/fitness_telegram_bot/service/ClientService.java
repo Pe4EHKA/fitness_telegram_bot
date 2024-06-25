@@ -25,12 +25,6 @@ public class ClientService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public List<Lesson> getAvailableLessonsByDate(int date) {
-        List<Lesson> availableLessons = lessonRepository.findByStartDateTime_Date(date);
-        return availableLessons.stream()
-                .filter(el -> el.getOccupiedPlaces() < el.getPlaces())
-                .collect(Collectors.toList());
-    }
     /*
     Выводит все занятия конкретного клиента
      */
