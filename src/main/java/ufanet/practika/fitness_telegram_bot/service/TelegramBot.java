@@ -16,14 +16,14 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ufanet.practika.fitness_telegram_bot.config.BotConfig;
+import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.entity.Role;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.entity.UserRole;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -38,9 +38,12 @@ public class TelegramBot extends TelegramLongPollingBot {
             "Type /mydata to see data stored about yourself\n\n" +
             "Type /help to see this message again";
 
-    static final String SCHEDULE = "Расписание";
+    static final String SCHEDULE = "Посмотреть записи";
     static final String APPOINTMENT = "Записаться";
     static final String ERROR_MESSAGE = "Error occurred: ";
+    static final String BACK_TO_MAIN = "Назад на главную";
+    static final String DELETE = "Удалить";
+    static final String BACK_TO_LESSONS = "Назад к занятиям";
 
     public TelegramBot(BotConfig config) {
         super(config.getToken());
@@ -104,10 +107,38 @@ public class TelegramBot extends TelegramLongPollingBot {
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             long chatId = update.getCallbackQuery().getMessage().getChatId();
 
-            switch (callBackData) {
-                case SCHEDULE -> scheduleRequestProcessing(chatId, messageId);
+            if (callBackData.equals(SCHEDULE)) {
+                clientShedule(chatId, messageId);
+            }
+            else if(getUserLessons(chatId).stream().map(el -> el.getId().toString()).toList().contains(callBackData)) {
+                lessonAdditionalInfo(chatId, messageId, callBackData);
+            }
+            else if(callBackData.equals(BACK_TO_LESSONS)) {
+                clientShedule(chatId, messageId);
+            }
+            else if(callBackData.equals(BACK_TO_MAIN)) {
+                mainWindow(chatId, messageId);
             }
         }
+    }
+
+    private void lessonAdditionalInfo(long chatId, long messageId, String callBackData){
+        Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
+
+        LinkedHashMap<String, String> buttons = new LinkedHashMap<>();
+        buttons.put("Удалить запись", DELETE);
+        buttons.put("Назад", BACK_TO_LESSONS);
+
+        String lessonType = lesson.getLessonType().getType();
+        String lessonStart = lesson.getStartDateTime().toString();
+        String lessonEnd = lesson.getEndDateTime().toString();
+        String instructor = lesson.getInstructor().getName();
+        String textToSend = lessonType + "\n"
+                + lessonStart + "\n"
+                + lessonEnd + "\n"
+                + instructor + "\n";
+
+        executeEditMessage(textToSend, chatId, messageId, buttons);
     }
 
     /*
@@ -160,9 +191,24 @@ public class TelegramBot extends TelegramLongPollingBot {
             clientService.registrateUser(userRole);
         }
     }
+    private List<Lesson> getUserLessons(long chatId){
+        Optional<User> user = clientService.getUser(chatId);
+        List<Lesson> clientLessons = null;
+        if(user.isPresent()) {
+            clientLessons = clientService.getAllClientLessons(user.get());
+        }
+        return clientLessons;
+    }
 
-    private void scheduleRequestProcessing(long chatId, long messageId){
+    private void clientShedule(long chatId, long messageId){
+        List<Lesson> clientLessons = getUserLessons(chatId);
+        String textToSend = "Твоё расписание:";
 
+        Map<String, String> clientButtons = clientLessons.stream()
+                .collect(Collectors.toMap(Lesson::toString, el -> el.getId().toString()));
+        clientButtons.put(BACK_TO_MAIN, BACK_TO_MAIN);
+
+        executeEditMessage(textToSend, chatId, messageId, clientButtons);
     }
     /*
     Обработка команды /start
@@ -171,26 +217,37 @@ public class TelegramBot extends TelegramLongPollingBot {
         String answer = EmojiParser.parseToUnicode("Привет, " + name + ", рад тебя видеть!"
                 + " :blush:\nЧто бы ты хотел сделать?");
         log.info("Replied to user: " + name);
+        prepareAndSendMessage(chatId, answer);
 
-        List<String> buttons = new ArrayList<>();
-        buttons.add(SCHEDULE);
-        buttons.add(APPOINTMENT);
-
+        // Подготовка кнопок для сообщения
+        HashMap<String, String> buttons = new HashMap<>();
+        buttons.put(SCHEDULE, SCHEDULE);
+        buttons.put(APPOINTMENT, SCHEDULE);
+        answer = "Выбери, что ты хочешь сделать:";
         prepareAndSendMessage(chatId, answer, buttons);
     }
+    private void mainWindow(long chatId, long messageId) {
+        // Подготовка кнопок для сообщения
+        Map<String, String> buttons = new LinkedHashMap<>();
+        buttons.put(SCHEDULE, SCHEDULE);
+        buttons.put(APPOINTMENT, SCHEDULE);
+        String textToSend = "Выбери, что ты хочешь сделать:";
+        executeEditMessage(textToSend, chatId, messageId, buttons);
+    }
     /*
-    Создаёт кнопки для клавиатуры под сообщением и возвращает объект, который их содержит
+    Создаёт кнопки для клавиатуры под сообщением и возвращает объект, который их содержит.
+    buttons - map содержащий текст для конпки(ключ) и идентификатор(значение)
      */
-    private InlineKeyboardMarkup getButtons(List<String> buttons) {
+    private InlineKeyboardMarkup getButtons(Map<String, String> buttons) {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
 
-        for(String button : buttons) {
+        for(var button : buttons.entrySet().stream().sorted().collect(Collectors.toCollection(LinkedHashSet::new))) {
             List<InlineKeyboardButton> row = new ArrayList<>();
 
             var keyBoardButton = new InlineKeyboardButton();
-            keyBoardButton.setText(button);
-            keyBoardButton.setCallbackData(button);
+            keyBoardButton.setText(button.getKey());
+            keyBoardButton.setCallbackData(button.getValue());
 
             row.add(keyBoardButton);
             buttonRows.add(row);
@@ -202,7 +259,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     /*
     Отправка сообщения с кнопками под ним
      */
-    private void prepareAndSendMessage(long chatId, String text, List<String> buttons) {
+    private void prepareAndSendMessage(long chatId, String text, HashMap<String, String> buttons) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText(text);
@@ -222,12 +279,12 @@ public class TelegramBot extends TelegramLongPollingBot {
     /*
     Изменяет прошлое сообщения на указанное новое
      */
-    private void executeEditMessage(String text, long chatId, long messageId, InlineKeyboardMarkup markup) {
+    private void executeEditMessage(String text, long chatId, long messageId, Map<String, String> buttons) {
         EditMessageText message = new EditMessageText();
         message.setChatId(chatId);
         message.setText(text);
         message.setMessageId((int) messageId);
-        message.setReplyMarkup(markup);
+        message.setReplyMarkup(getButtons(buttons));
 
         try {
             execute(message);
