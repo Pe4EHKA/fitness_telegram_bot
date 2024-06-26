@@ -38,15 +38,4 @@ public class Lesson {
 
     @OneToMany(mappedBy = "lesson")
     private Set<LessonRegistration> lessonRegistrations;
-
-    @Override
-    public String toString() {
-        int month = startDateTime.getMonthValue();
-        int dayOfMonth = startDateTime.getDayOfMonth();
-
-        int hour =  startDateTime.toLocalTime().getHour();
-        int minute = startDateTime.toLocalTime().getMinute();
-
-        return dayOfMonth + "." + month + " " + hour + ":" + minute + " " + lessonType.getType();
-    }
 }

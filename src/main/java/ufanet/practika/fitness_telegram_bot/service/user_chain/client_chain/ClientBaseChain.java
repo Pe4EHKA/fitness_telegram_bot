@@ -12,6 +12,7 @@ import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 import ufanet.practika.fitness_telegram_bot.service.user_chain.UserChain;
 
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -27,6 +28,9 @@ public abstract class ClientBaseChain implements UserChain {
     protected UserChain next;
     protected ClientService clientService;
     protected TelegramBot telegramBot;
+
+    protected DateTimeFormatter formatterByDay = DateTimeFormatter.ofPattern("dd.MM");
+    protected DateTimeFormatter formatterByTime = DateTimeFormatter.ofPattern("HH:mm");
 
     public ClientBaseChain(ClientService clientService, TelegramBot telegramBot) {
         this.clientService = clientService;
@@ -91,7 +95,14 @@ public abstract class ClientBaseChain implements UserChain {
         String textToSend = "Твоё расписание:";
 
         Map<String, String> clientButtons = clientLessons.stream()
-                .collect(Collectors.toMap(Lesson::toString, el -> el.getId().toString()));
+                .collect(Collectors.toMap(
+                        el -> {
+                            return el.getStartDateTime().format(formatterByDay) + " "
+                                    + el.getStartDateTime().format(formatterByTime) + " "
+                                    + el.getLessonType().getType();
+                        },
+                        el -> el.getId().toString())
+                );
         clientButtons.put(BACK_TO_MAIN, BACK_TO_MAIN);
 
         executeEditMessage(textToSend, chatId, messageId, clientButtons);
