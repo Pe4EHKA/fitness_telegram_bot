@@ -13,4 +13,10 @@ import java.util.List;
 public interface LessonRepository extends JpaRepository<Lesson, Integer> {
     Lesson findById(long id);
     List<Lesson> findByStartDateTimeBetween(LocalDateTime startDateTime, LocalDateTime endDateTime);
+    @Query("SELECT l FROM Lesson l WHERE l.startDateTime BETWEEN :startDateTime AND " +
+            ":endDateTime AND l.occupiedPlaces < l.places")
+    List<Lesson> findByStartDateTimeBetweenAndOccupiedPlacesLessThanPlaces(LocalDateTime startDateTime,
+                                                                           LocalDateTime endDateTime);
+    @Query("SELECT e.id FROM Lesson e")
+    List<Integer> findAllLessonIds();
 }

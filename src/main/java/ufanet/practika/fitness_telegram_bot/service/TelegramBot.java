@@ -16,15 +16,15 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ufanet.practika.fitness_telegram_bot.config.BotConfig;
-import ufanet.practika.fitness_telegram_bot.entity.Lesson;
-import ufanet.practika.fitness_telegram_bot.entity.Role;
-import ufanet.practika.fitness_telegram_bot.entity.User;
-import ufanet.practika.fitness_telegram_bot.entity.UserRole;
+import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.LessonRepository;
+import ufanet.practika.fitness_telegram_bot.repository.LessonsRegistrationRepository;
+import ufanet.practika.fitness_telegram_bot.repository.UserRepository;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -51,13 +51,21 @@ public class TelegramBot extends TelegramLongPollingBot {
     static final String BACK_TO_MAIN = "Назад на главную";
     static final String CANCEL_LESSON = "Отменить занятие";
     static final String BACK_TO_LESSONS = "Назад к занятиям";
+    static final String BACK_TO_LESSONS_SCHEDULE_WEEK = "Назад к расписанию на неделю";
+    static final String BACK_TO_LESSONS_SCHEDULE_DAY = "Назад к расписанию на день";
+    static final String SIGN_UP_LESSON = "Записаться ✅";
 
     final DateTimeFormatter formatterByDays = DateTimeFormatter.ofPattern("dd.MM.yy");
     final DateTimeFormatter formatterByHourAndMinutes = DateTimeFormatter.ofPattern("HH:mm");
+    final DateTimeFormatter formatterDateAndTime = DateTimeFormatter.ofPattern("dd.MM.yy\nHH:mm");
 
 
     @Autowired
     private LessonRepository lessonRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private LessonsRegistrationRepository lessonsRegistrationRepository;
 
     public TelegramBot(BotConfig config) {
         super(config.getToken());
@@ -127,21 +135,85 @@ public class TelegramBot extends TelegramLongPollingBot {
             /*
             Берём занятия пользователя и сревяем id занятий с id переданным в callBackData
              */
-            else if(getUserLessons(chatId).stream().map(el -> el.getId().toString()).toList().contains(callBackData)) {
+            else if (clientService.isLessonExists(chatId,callBackData)) {
                 lessonAdditionalInfo(chatId, messageId, callBackData);
             }
-            else if(callBackData.equals(BACK_TO_LESSONS)) {
+            else if (callBackData.equals(BACK_TO_LESSONS)) {
                 clientSchedule(chatId, messageId);
             }
-            else if(callBackData.equals(BACK_TO_MAIN)) {
+            else if (callBackData.equals(BACK_TO_MAIN)) {
                 mainWindow(chatId, messageId);
+            }
+            else if (callBackData.contains(CANCEL_LESSON)){
+                cancelLesson(chatId, messageId, callBackData);
+            } else if (callBackData.contains(BACK_TO_LESSONS_SCHEDULE_WEEK)) {
+                chooseDayOfTraining(chatId, messageId);
+            } else if (clientService.isBackToLessons_Schedule_Day(callBackData)) {
+                lessonsAvailableSchedule(chatId, messageId, clientService
+                        .getLesson(Integer.parseInt(callBackData.split("/")[1])).getStartDateTime().toString());
             } else if (callBackData.equals(APPOINTMENT)) {
                 chooseDayOfTraining(chatId, messageId);
-            }
-            else if(callBackData.contains(CANCEL_LESSON)){
-                cancelLesson(chatId, messageId, callBackData);
+            } else if (dayContainsLessons(callBackData)) {
+                lessonsAvailableSchedule(chatId, messageId, callBackData);
+            } else if (clientService.containsLessonId(callBackData)) {
+                toSignUpLessonInfo(chatId, messageId, callBackData);
+            } else if (clientService.isSignUp(callBackData)) {
+                signUpToLesson(chatId, messageId, callBackData);
             }
         }
+    }
+
+    private void signUpToLesson(long chatId, long messageId, String callBackData) {
+        String[] data = callBackData.split("/");
+        Integer lessonId = Integer.parseInt(data[1]);
+        Lesson lessonToSignUp = lessonRepository.findById(lessonId).get();
+        User user = userRepository.findByChatId(chatId).get();
+        LessonRegistration lessonRegistration = new LessonRegistration();
+        lessonRegistration.setUser(user);
+        lessonRegistration.setLesson(lessonToSignUp);
+        lessonRegistration.setRegistrationDateTime(LocalDateTime.now());
+
+        lessonToSignUp.setOccupiedPlaces(lessonToSignUp.getOccupiedPlaces() + 1);
+        lessonRepository.save(lessonToSignUp);
+        lessonsRegistrationRepository.save(lessonRegistration);
+
+        String textToEdit = "Вы успешно записаны на занятие!\nДата и время начала занятия: " +
+                lessonToSignUp.getStartDateTime().format(formatterDateAndTime);
+        executeEditMessage(textToEdit, chatId, messageId, Map.of());
+
+        String text = "Для продолженияя нажмите /start";
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(text);
+        executeMessage(sendMessage);
+    }
+
+    private void toSignUpLessonInfo(long chatId, long messageId, String callBackData) {
+        Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
+        User instructor = lesson.getInstructor();
+        String text = lesson.getLessonType().getDescription() + "\nВаш тренер:\n" + instructor.getName() + "\n" +
+                instructor.getBio();
+        Map<String, String> buttons = new LinkedHashMap<>();
+        buttons.put(SIGN_UP_LESSON, String.format("%s/%d", SIGN_UP_LESSON, lesson.getId()));
+        buttons.put(BACK_TO_LESSONS_SCHEDULE_DAY, String.format("%s/%d",BACK_TO_LESSONS_SCHEDULE_DAY, lesson.getId()));
+        executeEditMessage(text, chatId, messageId, buttons);
+    }
+
+    private void lessonsAvailableSchedule(long chatId, long messageId, String callBackData) {
+        List<Lesson> lessonsByDay = clientService.getAllAvailableLessonsByDay(callBackData);
+        Map<String, String> buttons = new LinkedHashMap<>();
+        for (Lesson lesson : lessonsByDay) {
+            buttons.put(lesson.getStartDateTime().format(formatterByHourAndMinutes) + " " +
+                            lesson.getLessonType().getType(), lesson.getId().toString());
+        }
+        String text = "Наше расписание занятий на " + LocalDateTime.parse(callBackData).format(formatterByDays) + ": ";
+        buttons.put("Назад", BACK_TO_LESSONS_SCHEDULE_WEEK);
+        executeEditMessage(text, chatId, messageId, buttons);
+    }
+
+    private boolean dayContainsLessons(String callBackData) {
+        List<Lesson> lessonsByDay = clientService.getAllAvailableLessonsByDay(callBackData);
+        return !lessonsByDay.isEmpty();
     }
 
     private void chooseDayOfTraining(long chatId, long messageId) {
@@ -150,12 +222,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         List<Lesson> lessonsTraining = lessonRepository.findByStartDateTimeBetween(now, afterSevenDays);
         Map<String, String> buttons = new LinkedHashMap<>();
         for (Lesson lesson : lessonsTraining) {
-            buttons.put(lesson.getStartDateTime().format(formatterByDays), lesson.getStartDateTime().toString());
+            if (!buttons.containsKey(lesson.getStartDateTime().format(formatterByDays))) {
+                buttons.put(lesson.getStartDateTime().format(formatterByDays), lesson.getStartDateTime().toString());
+            }
         }
         buttons.put("Назад", BACK_TO_MAIN);
         String text = "Наше расписание занятий на неделю: ";
         executeEditMessage(text, chatId, messageId, buttons);
-
     }
 
     private void cancelLesson(long chatId, long messageId, String callBackData) {
@@ -277,7 +350,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         // Подготовка кнопок для сообщения
         Map<String, String> buttons = new HashMap<>();
         buttons.put(SCHEDULE, SCHEDULE);
-        buttons.put(APPOINTMENT, SCHEDULE);
+        buttons.put(APPOINTMENT, APPOINTMENT);
         String textToSend = "Выбери, что ты хочешь сделать:";
         executeEditMessage(textToSend, chatId, messageId, buttons);
     }

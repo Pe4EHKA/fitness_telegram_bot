@@ -1,17 +1,20 @@
 package ufanet.practika.fitness_telegram_bot.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.*;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.regex.PatternSyntaxException;
 
+@Slf4j
 @Service
 public class ClientService {
     @Autowired
@@ -25,6 +28,51 @@ public class ClientService {
     @Autowired
     private RoleRepository roleRepository;
 
+
+    public boolean isSignUp(String callBackData) {
+        String[] data = new String[0];
+        try {
+            data = callBackData.split("/");
+            return data[0].equals(TelegramBot.SIGN_UP_LESSON);
+        } catch (PatternSyntaxException e) {
+            log.error("Error occurred during parsing callBackData " + e.getMessage(), e);
+        }
+        return false;
+    }
+
+    public boolean isBackToLessons_Schedule_Day(String callBackData) {
+        String[] data;
+        try {
+            data = callBackData.split("/");
+        } catch (PatternSyntaxException e) {
+            log.error("Error occurred during split callBackData " + e.getMessage(), e);
+            return false;
+        }
+        return data[0].equals(TelegramBot.BACK_TO_LESSONS_SCHEDULE_DAY);
+    }
+
+    public boolean containsLessonId(String callBackData) {
+        int lessonId;
+        try {
+            lessonId = Integer.parseInt(callBackData);
+        } catch (NumberFormatException e) {
+            log.error("Error occurred during parsing callBackData to Integer " + e.getMessage(), e);
+            return false;
+        }
+        return lessonRepository.findAllLessonIds().contains(lessonId);
+    }
+
+    public List<Lesson> getAllAvailableLessonsByDay(String callBackData) {
+        List<Lesson> lessonsList = List.of();
+        try {
+            LocalDateTime day = LocalDateTime.parse(callBackData);
+            LocalDateTime endDay = day.with(LocalTime.of(23, 59));
+            lessonsList = lessonRepository.findByStartDateTimeBetweenAndOccupiedPlacesLessThanPlaces(day, endDay);
+        } catch (DateTimeParseException e) {
+            log.error("Error during parsing DateTime " + e.getMessage(), e);
+        }
+        return lessonsList;
+    }
     /*
     Выводит все занятия конкретного клиента
      */
@@ -42,30 +90,38 @@ public class ClientService {
 
         lessonsRegistrationRepository.save(lessonRegistration);
     }
+
     public void cancelLesson(User user, Lesson lesson) {
-        if (lessonsRegistrationRepository.existsByUserAndLesson(user, lesson)) {
-            Optional<LessonRegistration> lessonRegistrationToDelete = Optional.empty();
+        Optional<LessonRegistration> lessonRegistration = lessonsRegistrationRepository.findByLessonAndUser(lesson, user);
+        if (lessonRegistration.isPresent()) {
+            Lesson lessonChanged = lessonRegistration.get().getLesson();
+            Integer occupaiedPlaces = lessonChanged.getOccupiedPlaces();
+            lessonChanged.setOccupiedPlaces(occupaiedPlaces - 1);
 
-            Set<LessonRegistration> lessonRegistrationSet = lesson.getLessonRegistrations();
-
-            for (LessonRegistration lessonRegistration : lessonRegistrationSet) {
-                if (lessonRegistration.getUser().equals(user)) {
-                    lessonRegistrationToDelete = Optional.of(lessonRegistration);
-                    lessonsRegistrationRepository.delete(lessonRegistration);
-                    break;
-                }
-            }
-            lessonRegistrationToDelete.ifPresent(lessonRegistrationSet::remove);
-            lesson.setOccupiedPlaces(lesson.getOccupiedPlaces() - 1);
-            lessonRepository.save(lesson);
+            lessonsRegistrationRepository.delete(lessonRegistration.get());
+            lessonRepository.save(lessonChanged);
         }
     }
+
     public void registrateUser(UserRole userRole){
         userRepository.save(userRole.getUser());
         userRoleRepository.save(userRole);
     }
     public Role getRole(String userRole){
         return roleRepository.findByRole(userRole);
+    }
+    public boolean isLessonExists(long chatId, String callBackData){
+        long lessonId;
+        try {
+            lessonId = Integer.parseInt(callBackData);
+        } catch (NumberFormatException e) {
+            log.error("Error occured during parsing callBackData to Integer " + e.getMessage(), e);
+            return false;
+        }
+        User user = userRepository.findByChatId(chatId).get();
+        Lesson lesson = lessonRepository.findById(lessonId);
+
+        return lessonsRegistrationRepository.existsByUserAndLesson(user, lesson);
     }
     public boolean isExistingUser(Long chatId){
         return userRepository.existsByChatId(chatId);
