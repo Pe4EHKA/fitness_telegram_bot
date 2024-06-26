@@ -1,7 +1,6 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
-import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
-import ufanet.practika.fitness_telegram_bot.config.BotConfig;
+import org.telegram.telegrambots.meta.api.objects.Update;
 import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
@@ -15,8 +14,10 @@ public class AdditionalInfoChain extends ClientBaseChain {
     }
 
     @Override
-    public void process(long chatId, long messageId, CallbackQuery callbackQuery) {
-        String callBackData = callbackQuery.getData();
+    public void process(Update update) {
+        String callBackData = update.getCallbackQuery().getData();
+        long chatId = update.getCallbackQuery().getMessage().getChatId();
+        long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
         if(getUserLessons(chatId).stream().map(el -> el.getId().toString()).toList().contains(callBackData)) {
             Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
@@ -37,7 +38,7 @@ public class AdditionalInfoChain extends ClientBaseChain {
             executeEditMessage(textToSend, chatId, messageId, buttons);
         } else{
             if(next != null){
-                next.process(chatId, messageId, callbackQuery);
+                next.process(update);
             }
         }
     }

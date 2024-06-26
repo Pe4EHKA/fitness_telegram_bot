@@ -1,16 +1,11 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.bots.DefaultAbsSender;
-import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import ufanet.practika.fitness_telegram_bot.config.BotConfig;
 import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.service.ClientService;
@@ -52,18 +47,6 @@ public abstract class ClientBaseChain implements UserChain {
         message.setChatId(chatId);
         message.setText(text);
         message.setMessageId((int) messageId);
-        message.setReplyMarkup(getButtons(buttons));
-
-        try {
-            telegramBot.execute(message);
-        } catch (TelegramApiException e) {
-            log.error(ERROR_MESSAGE + e.getMessage());
-        }
-    }
-    protected void prepareAndSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        message.setText(textToSend);
         message.setReplyMarkup(getButtons(buttons));
 
         try {

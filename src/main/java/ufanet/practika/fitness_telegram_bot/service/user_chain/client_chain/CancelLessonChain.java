@@ -1,6 +1,7 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import org.telegram.telegrambots.meta.api.objects.Update;
 import ufanet.practika.fitness_telegram_bot.config.BotConfig;
 import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.entity.User;
@@ -15,8 +16,10 @@ public class CancelLessonChain extends ClientBaseChain {
     }
 
     @Override
-    public void process(long chatId, long messageId, CallbackQuery callbackQuery) {
-        String callBackData = callbackQuery.getData();
+    public void process(Update update) {
+        String callBackData = update.getCallbackQuery().getData();
+        long chatId = update.getCallbackQuery().getMessage().getChatId();
+        long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
         Optional<User> user = clientService.getUser(chatId);
         if (user.isPresent()) {
@@ -28,7 +31,7 @@ public class CancelLessonChain extends ClientBaseChain {
             clientSchedule(chatId, messageId);
         } else{
             if(next != null){
-                next.process(chatId, messageId, callbackQuery);
+                next.process(update);
             }
         }
     }

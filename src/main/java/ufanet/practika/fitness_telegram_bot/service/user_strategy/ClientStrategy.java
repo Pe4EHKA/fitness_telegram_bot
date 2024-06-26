@@ -24,8 +24,6 @@ public class ClientStrategy implements UserStrategy{
                 new CancelLessonChain(clientService, telegramBot)
         );
 
-        long chatId = update.getMessage().getChatId();
-        long messageId = update.getMessage().getMessageId();
-        baseChain.process(chatId, messageId, update.getCallbackQuery());
+        baseChain.process(update);
     }
 }

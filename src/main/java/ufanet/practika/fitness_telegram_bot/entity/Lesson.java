@@ -4,9 +4,8 @@ package ufanet.practika.fitness_telegram_bot.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Set;
 
 @Entity
@@ -43,6 +42,12 @@ public class Lesson {
 
     @Override
     public String toString() {
-        return startDateTime + " " + lessonType.getType();
+        Month month = startDateTime.getMonth();
+        int dayOfMonth = startDateTime.getDayOfMonth();
+
+        int hour =  startDateTime.toLocalTime().getHour();
+        int minute = startDateTime.toLocalTime().getMinute();
+
+        return dayOfMonth + "." + month + " " + hour + ":" + minute;
     }
 }
