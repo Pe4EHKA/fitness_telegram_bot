@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.Set;
 
 @Entity
@@ -42,12 +41,12 @@ public class Lesson {
 
     @Override
     public String toString() {
-        Month month = startDateTime.getMonth();
+        int month = startDateTime.getMonthValue();
         int dayOfMonth = startDateTime.getDayOfMonth();
 
         int hour =  startDateTime.toLocalTime().getHour();
         int minute = startDateTime.toLocalTime().getMinute();
 
-        return dayOfMonth + "." + month + " " + hour + ":" + minute;
+        return dayOfMonth + "." + month + " " + hour + ":" + minute + " " + lessonType.getType();
     }
 }
