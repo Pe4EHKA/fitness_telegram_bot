@@ -1,8 +1,6 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
-import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import ufanet.practika.fitness_telegram_bot.config.BotConfig;
 import ufanet.practika.fitness_telegram_bot.entity.Lesson;
 import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.service.ClientService;
@@ -22,7 +20,7 @@ public class CancelLessonChain extends ClientBaseChain {
         long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
         Optional<User> user = clientService.getUser(chatId);
-        if (user.isPresent()) {
+        if (callBackData.contains(CANCEL_LESSON)) {
             String[] splitedCallBackData = callBackData.split(" ");
             int lessonId = Integer.parseInt(splitedCallBackData[splitedCallBackData.length - 1]);
             Lesson lesson = clientService.getLesson(lessonId);

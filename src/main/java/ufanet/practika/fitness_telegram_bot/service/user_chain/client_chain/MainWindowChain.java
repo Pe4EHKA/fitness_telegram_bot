@@ -13,8 +13,8 @@ import java.util.Map;
 
 @Slf4j
 public class MainWindowChain extends ClientBaseChain {
-    private final Map<String, String> buttons = new HashMap<>();
-    private final String textToSend = "Выбери, что ты хочешь сделать:";
+    protected final Map<String, String> buttons = new HashMap<>();
+    protected final String textToSend = "Выбери, что ты хочешь сделать:";
 
     public MainWindowChain(ClientService clientService, TelegramBot bot) {
         super(clientService, bot);
@@ -28,25 +28,23 @@ public class MainWindowChain extends ClientBaseChain {
         long chatId;
         long messageId;
 
-        if((callbackQuery == null) || callbackQuery.getData().equals(BACK_TO_MAIN) ) {
-            if(callbackQuery != null) {
-                chatId = callbackQuery.getMessage().getChatId();
-                messageId = callbackQuery.getMessage().getMessageId();
-
-                executeEditMessage(textToSend, chatId, messageId, buttons);
-            } else{
-                chatId = update.getMessage().getChatId();
-
-                executeSendMessage(chatId, textToSend, buttons);
-            }
-        } else{
+        if((callbackQuery == null)){
+            chatId = update.getMessage().getChatId();
+            executeSendMessage(chatId, textToSend, buttons);
+        }
+        else if (callbackQuery.getData().equals(BACK_TO_MAIN)){
+            chatId = callbackQuery.getMessage().getChatId();
+            messageId = callbackQuery.getMessage().getMessageId();
+            executeEditMessage(textToSend, chatId, messageId, buttons);
+        }
+        else{
             if(next != null){
                 next.process(update);
             }
         }
     }
 
-    private void executeSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
+    protected void executeSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText(textToSend);

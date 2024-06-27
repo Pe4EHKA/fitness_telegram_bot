@@ -21,7 +21,11 @@ public class ClientStrategy implements UserStrategy{
                 new MainWindowChain(clientService, telegramBot),
                 new ScheduleClientChain(clientService, telegramBot),
                 new AdditionalInfoChain(clientService, telegramBot),
-                new CancelLessonChain(clientService, telegramBot)
+                new CancelLessonChain(clientService, telegramBot),
+                new ChooseTrainingDayChain(clientService, telegramBot),
+                new LessonsByDayChain(clientService, telegramBot),
+                new SingUpLessonInfoChain(clientService, telegramBot),
+                new SingUpToLessonChain(clientService, telegramBot)
         );
 
         baseChain.process(update);

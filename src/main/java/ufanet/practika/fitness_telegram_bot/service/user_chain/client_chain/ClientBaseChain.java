@@ -1,7 +1,6 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import lombok.extern.slf4j.Slf4j;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -24,6 +23,9 @@ public abstract class ClientBaseChain implements UserChain {
     static final String BACK_TO_MAIN = "Назад на главную";
     static final String CANCEL_LESSON = "Отменить занятие";
     static final String BACK_TO_LESSONS = "Назад к занятиям";
+    static final String BACK_TO_LESSONS_SCHEDULE_WEEK = "К выбору дня";
+    static final String BACK_TO_LESSONS_SCHEDULE_DAY = "К выбору тренировки";
+    static final String SIGN_UP_LESSON = "Записаться на занятие";
 
     protected UserChain next;
     protected ClientService clientService;
@@ -31,6 +33,7 @@ public abstract class ClientBaseChain implements UserChain {
 
     protected DateTimeFormatter formatterByDay = DateTimeFormatter.ofPattern("dd.MM");
     protected DateTimeFormatter formatterByTime = DateTimeFormatter.ofPattern("HH:mm");
+    protected DateTimeFormatter formatterDateAndTime = DateTimeFormatter.ofPattern("dd.MM.yy\nHH:mm");
 
     public ClientBaseChain(ClientService clientService, TelegramBot telegramBot) {
         this.clientService = clientService;
@@ -106,5 +109,15 @@ public abstract class ClientBaseChain implements UserChain {
         clientButtons.put(BACK_TO_MAIN, BACK_TO_MAIN);
 
         executeEditMessage(textToSend, chatId, messageId, clientButtons);
+    }
+
+    protected boolean canParseInt(String input) {
+        boolean answer = true;
+        try{
+            Integer.parseInt(input);
+        } catch (NumberFormatException exception) {
+            answer = false;
+        }
+        return answer;
     }
 }

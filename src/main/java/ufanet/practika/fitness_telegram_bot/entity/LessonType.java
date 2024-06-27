@@ -18,6 +18,9 @@ public class LessonType {
     @Column(name = "type", nullable = false)
     private String type;
 
+    @Column(name = "description", nullable = false)
+    private String description;
+
     @Column(name = "place")
     private String place;
 

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.*;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,16 +59,28 @@ public class ClientService {
         return roleRepository.findByRole(userRole);
     }
     public boolean isLessonExists(long chatId, int lessonId){
-        User user = userRepository.findByChatId(chatId).get();
+        User user = userRepository.findByChatId(chatId);
         Lesson lesson = lessonRepository.findById(lessonId);
 
         return lessonsRegistrationRepository.existsByUserAndLesson(user, lesson);
     }
+    public List<Lesson> getLessonsBetweenDates(LocalDateTime start, LocalDateTime end){
+        return lessonRepository.findByStartDateTimeBetween(start, end);
+    }
+    public boolean isLessonExistsById(long id){
+        return lessonRepository.existsById(id);
+    }
+    public void registrateLesson(Lesson lesson, LessonRegistration lessonRegistration){
+        lessonRepository.save(lesson);
+        lessonsRegistrationRepository.save(lessonRegistration);
+    }
+
+    public List<Lesson> getAllAvailableLessonsByDay(LocalDateTime day) {
+        LocalDateTime endDay = day.with(LocalTime.of(23, 59));
+        return lessonRepository.findByStartDateTimeBetweenAndOccupiedPlacesIsLessThanPlaces(day, endDay);
+    }
 
     public Optional<User> getUser(Long chatId){
-        return userRepository.findByChatId(chatId);
-    }
-    public List<User> getAllUsers(){
-        return userRepository.findAll();
+        return Optional.of(userRepository.findByChatId(chatId));
     }
 }
