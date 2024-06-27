@@ -4,8 +4,6 @@ package ufanet.practika.fitness_telegram_bot.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -40,9 +38,4 @@ public class Lesson {
 
     @OneToMany(mappedBy = "lesson")
     private Set<LessonRegistration> lessonRegistrations;
-
-    @Override
-    public String toString() {
-        return startDateTime + " " + lessonType.getType();
-    }
 }

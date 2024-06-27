@@ -14,4 +14,5 @@ public interface LessonsRegistrationRepository extends JpaRepository<LessonRegis
     List<LessonRegistration> findByUser(User user);
     Optional<LessonRegistration> findByLessonAndUser(Lesson lesson, User user);
     boolean existsByUserAndLesson(User user, Lesson lesson);
+    //boolean existsByLesson_IdAndUser_ChatId(int lessonId, long chatId);
 }

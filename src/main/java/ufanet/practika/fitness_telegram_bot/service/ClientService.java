@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ufanet.practika.fitness_telegram_bot.entity.*;
 import ufanet.practika.fitness_telegram_bot.repository.*;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,14 +40,6 @@ public class ClientService {
     public Lesson getLesson(long id){
         return lessonRepository.findById(id);
     }
-
-    public void singUpLesson(Lesson lesson, User user) {
-        LessonRegistration lessonRegistration = new LessonRegistration();
-        lessonRegistration.setLesson(lesson);
-        lessonRegistration.setUser(user);
-
-        lessonsRegistrationRepository.save(lessonRegistration);
-    }
     public void cancelLesson(User user, Lesson lesson) {
         Optional<LessonRegistration> lessonRegistration = lessonsRegistrationRepository.findByLessonAndUser(lesson, user);
         if (lessonRegistration.isPresent()) {
@@ -56,22 +50,6 @@ public class ClientService {
             lessonsRegistrationRepository.delete(lessonRegistration.get());
             lessonRepository.save(lessonChanged);
         }
-        /*if (lessonsRegistrationRepository.existsByUserAndLesson(user, lesson)) {
-            Optional<LessonRegistration> lessonRegistrationToDelete = Optional.empty();
-
-            Set<LessonRegistration> lessonRegistrationSet = lesson.getLessonRegistrations();
-
-            for (LessonRegistration lessonRegistration : lessonRegistrationSet) {
-                if (lessonRegistration.getUser().equals(user)) {
-                    lessonRegistrationToDelete = Optional.of(lessonRegistration);
-                    lessonsRegistrationRepository.delete(lessonRegistration);
-                    break;
-                }
-            }
-            lessonRegistrationToDelete.ifPresent(lessonRegistrationSet::remove);
-            lesson.setOccupiedPlaces(lesson.getOccupiedPlaces() - 1);
-            lessonRepository.save(lesson);
-        }*/
     }
     public void registrateUser(UserRole userRole){
         userRepository.save(userRole.getUser());
@@ -80,23 +58,29 @@ public class ClientService {
     public Role getRole(String userRole){
         return roleRepository.findByRole(userRole);
     }
-    public boolean isExistingUser(Long chatId){
-        return userRepository.existsByChatId(chatId);
+    public boolean isLessonExists(long chatId, int lessonId){
+        User user = userRepository.findByChatId(chatId);
+        Lesson lesson = lessonRepository.findById(lessonId);
+
+        return lessonsRegistrationRepository.existsByUserAndLesson(user, lesson);
+    }
+    public List<Lesson> getLessonsBetweenDates(LocalDateTime start, LocalDateTime end){
+        return lessonRepository.findByStartDateTimeBetween(start, end);
+    }
+    public boolean isLessonExistsById(long id){
+        return lessonRepository.existsById(id);
+    }
+    public void registrateLesson(Lesson lesson, LessonRegistration lessonRegistration){
+        lessonRepository.save(lesson);
+        lessonsRegistrationRepository.save(lessonRegistration);
+    }
+
+    public List<Lesson> getAllAvailableLessonsByDay(LocalDateTime day) {
+        LocalDateTime endDay = day.with(LocalTime.of(23, 59));
+        return lessonRepository.findByStartDateTimeBetweenAndOccupiedPlacesIsLessThanPlaces(day, endDay);
     }
 
     public Optional<User> getUser(Long chatId){
-        return userRepository.findByChatId(chatId);
-    }
-    public List<User> getAllUsers(){
-        return userRepository.findAll();
-    }
-
-    // Временный метод, для удобства разработки: проверяет существование роли
-    public boolean isExistingRole(String role){
-        return roleRepository.existsByRole(role);
-    }
-    // Временный метод, для удобства разработки: сохраняет роль
-    public void registrateRole(Role role){
-        roleRepository.save(role);
+        return Optional.of(userRepository.findByChatId(chatId));
     }
 }
