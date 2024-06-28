@@ -20,12 +20,12 @@ public class SingUpLessonInfoChain extends ClientBaseChain{
         CallbackQuery callbackQuery = update.getCallbackQuery();
         String callBackData = callbackQuery.getData();
 
-        if(canParseInt(callBackData) && isContainsLessonId(callBackData)){
+        if(isContainsLessonId(callBackData)){
             Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
             User instructor = lesson.getInstructor();
 
-            String text = lesson.getLessonType().getType() + "\n***\n" +
-                    lesson.getLessonType().getDescription() + "\n***\nВаш тренер:\n" + instructor.getName() + "\n***\n" +
+            String text = lesson.getLessonType().getType() + "\n\n" +
+                    lesson.getLessonType().getDescription() + "\n***\nВаш тренер - " + instructor.getName() + ":\n" +
                     instructor.getBio();
             Map<String, String> buttons = new HashMap<>();
             buttons.put(SIGN_UP_LESSON, SIGN_UP_LESSON + "/" + lesson.getId());
@@ -41,10 +41,10 @@ public class SingUpLessonInfoChain extends ClientBaseChain{
         }
     }
     private boolean isContainsLessonId(String callBackData){
-        if(canParseInt(callBackData)) {
+        try {
             int lessonId = Integer.parseInt(callBackData);
             return clientService.isLessonExistsById(lessonId);
-        } else {
+        } catch (NumberFormatException e) {
             return false;
         }
     }

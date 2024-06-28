@@ -1,6 +1,7 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import lombok.extern.slf4j.Slf4j;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -11,15 +12,17 @@ import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 import ufanet.practika.fitness_telegram_bot.service.user_chain.UserChain;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
 public abstract class ClientBaseChain implements UserChain {
+    static final String ERROR_MESSAGE = "Error occurred: ";
+
     static final String SCHEDULE = "Посмотреть записи";
     static final String APPOINTMENT = "Записаться";
-    static final String ERROR_MESSAGE = "Error occurred: ";
     static final String BACK_TO_MAIN = "Назад на главную";
     static final String CANCEL_LESSON = "Отменить занятие";
     static final String BACK_TO_LESSONS = "Назад к занятиям";
@@ -63,6 +66,19 @@ public abstract class ClientBaseChain implements UserChain {
         }
     }
 
+    protected void executeSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(textToSend);
+        message.setReplyMarkup(getButtons(buttons));
+
+        try {
+            telegramBot.execute(message);
+        } catch (TelegramApiException e) {
+            log.error(ERROR_MESSAGE + e.getMessage());
+        }
+    }
+
     protected InlineKeyboardMarkup getButtons(Map<String, String> buttons) {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
@@ -84,7 +100,7 @@ public abstract class ClientBaseChain implements UserChain {
         return inlineKeyboardMarkup;
     }
 
-    protected List<Lesson> getUserLessons(long chatId){
+    private List<Lesson> getUserLessons(long chatId){
         Optional<User> user = clientService.getUser(chatId);
         List<Lesson> clientLessons = null;
         if(user.isPresent()) {
@@ -96,8 +112,10 @@ public abstract class ClientBaseChain implements UserChain {
     protected void clientSchedule(long chatId, long messageId){
         List<Lesson> clientLessons = getUserLessons(chatId);
         String textToSend = "Твоё расписание:";
+        LocalDateTime now = LocalDateTime.now();
 
         Map<String, String> clientButtons = clientLessons.stream()
+                .filter(el -> now.isBefore(el.getStartDateTime()))
                 .collect(Collectors.toMap(
                         el -> {
                             return el.getStartDateTime().format(formatterByDay) + " "
@@ -109,15 +127,5 @@ public abstract class ClientBaseChain implements UserChain {
         clientButtons.put(BACK_TO_MAIN, BACK_TO_MAIN);
 
         executeEditMessage(textToSend, chatId, messageId, clientButtons);
-    }
-
-    protected boolean canParseInt(String input) {
-        boolean answer = true;
-        try{
-            Integer.parseInt(input);
-        } catch (NumberFormatException exception) {
-            answer = false;
-        }
-        return answer;
     }
 }

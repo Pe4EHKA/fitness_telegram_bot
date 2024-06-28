@@ -19,12 +19,12 @@ public class CancelLessonChain extends ClientBaseChain {
         long chatId = update.getCallbackQuery().getMessage().getChatId();
         long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
-        Optional<User> user = clientService.getUser(chatId);
         if (callBackData.contains(CANCEL_LESSON)) {
             String[] splitedCallBackData = callBackData.split(" ");
             int lessonId = Integer.parseInt(splitedCallBackData[splitedCallBackData.length - 1]);
             Lesson lesson = clientService.getLesson(lessonId);
 
+            Optional<User> user = clientService.getUser(chatId);
             clientService.cancelLesson(user.get(), lesson);
             clientSchedule(chatId, messageId);
         } else{
