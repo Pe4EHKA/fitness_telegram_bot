@@ -11,6 +11,7 @@ import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 import ufanet.practika.fitness_telegram_bot.service.user_chain.UserChain;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -84,7 +85,7 @@ public abstract class ClientBaseChain implements UserChain {
         return inlineKeyboardMarkup;
     }
 
-    protected List<Lesson> getUserLessons(long chatId){
+    private List<Lesson> getUserLessons(long chatId){
         Optional<User> user = clientService.getUser(chatId);
         List<Lesson> clientLessons = null;
         if(user.isPresent()) {
@@ -96,8 +97,10 @@ public abstract class ClientBaseChain implements UserChain {
     protected void clientSchedule(long chatId, long messageId){
         List<Lesson> clientLessons = getUserLessons(chatId);
         String textToSend = "Твоё расписание:";
+        LocalDateTime now = LocalDateTime.now();
 
         Map<String, String> clientButtons = clientLessons.stream()
+                .filter(el -> now.isBefore(el.getStartDateTime()))
                 .collect(Collectors.toMap(
                         el -> {
                             return el.getStartDateTime().format(formatterByDay) + " "

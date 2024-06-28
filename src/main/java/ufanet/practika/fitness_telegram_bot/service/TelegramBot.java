@@ -50,9 +50,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         // Настройка команд, которые будут доступны в меню
         List<BotCommand> listOfCommands = new ArrayList<>();
-        listOfCommands.add(new BotCommand("/start", "get a welcome message"));
-        listOfCommands.add(new BotCommand("/mydata", "get your data stored in the database"));
-        listOfCommands.add(new BotCommand("/help", "info how to use this bot"));
+        listOfCommands.add(new BotCommand("/start", "Начать работу с ботом"));
+        listOfCommands.add(new BotCommand("/mydata", "Получить свои данные"));
+        listOfCommands.add(new BotCommand("/help", "Подсказка"));
 
         try {
             execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
