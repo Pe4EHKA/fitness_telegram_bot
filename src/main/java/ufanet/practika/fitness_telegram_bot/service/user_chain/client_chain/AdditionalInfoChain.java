@@ -20,7 +20,7 @@ public class AdditionalInfoChain extends ClientBaseChain {
         long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
 
-        if(canParseInt(callBackData) && clientService.isLessonExists(chatId, Integer.parseInt(callBackData))) {
+        if(canParseInt(callBackData) && clientService.isLessonRegistrationExists(chatId, Integer.parseInt(callBackData))) {
             Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
 
             Map<String, String> buttons = new HashMap<>();

@@ -1,6 +1,7 @@
 package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import lombok.extern.slf4j.Slf4j;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -55,6 +56,19 @@ public abstract class ClientBaseChain implements UserChain {
         message.setChatId(chatId);
         message.setText(text);
         message.setMessageId((int) messageId);
+        message.setReplyMarkup(getButtons(buttons));
+
+        try {
+            telegramBot.execute(message);
+        } catch (TelegramApiException e) {
+            log.error(ERROR_MESSAGE + e.getMessage());
+        }
+    }
+
+    protected void executeSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(textToSend);
         message.setReplyMarkup(getButtons(buttons));
 
         try {

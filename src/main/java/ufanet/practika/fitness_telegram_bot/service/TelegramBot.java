@@ -27,15 +27,15 @@ import java.util.*;
 public class TelegramBot extends TelegramLongPollingBot {
     private final ClientService clientService;
     static final String HELP_TEXT = """
-            This bot is created to administrate your fitness training.
+            Этот бот создан для администрирования твоих тренировок в зале.
 
-            You can execute from main menu on the left or by typing command
+            Ты можешь ввести команды или выбрать их в меню
 
-            Type /start to see welcome message
+            Напиши /start чтобы начать
 
-            Type /mydata to see data stored about yourself
+            Напиши /mydata чтобы увидеть информацию о себе
 
-            Type /help to see this message again""";
+            Напиши /help чтобы увидеть это сообщение снова""";
     static final String ERROR_MESSAGE = "Error occurred: ";
     private final BotConfig botConfig;
     private final UserContext userContext;
@@ -49,13 +49,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         this.clientService = clientService;
 
         // Настройка команд, которые будут доступны в меню
-        List<BotCommand> listOfCommands = new ArrayList<>();
+        List<BotCommand> listOfCommands = new LinkedList<>();
         listOfCommands.add(new BotCommand("/start", "Начать работу с ботом"));
         listOfCommands.add(new BotCommand("/mydata", "Получить свои данные"));
         listOfCommands.add(new BotCommand("/help", "Подсказка"));
 
         try {
-            execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
+            execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), "ru-RU"));
         } catch (TelegramApiException e) {
             log.error(ERROR_MESSAGE + e.getMessage());
         }
@@ -131,6 +131,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             userRole.setRole(role);
             userRole.setUser(user);
 
+            // Запись в БД
             clientService.registrateUser(userRole);
         } else {
             user = optionalUser.get();
@@ -142,11 +143,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         log.info("Replied to user: " + name);
         prepareAndSendMessage(msg.getChatId(), answer);
 
-        // Настройка стратегии
-        userContext.setUserStrategy(new ClientStrategy(clientService, this));
+        // Получение роли пользователя и её проверка -> установление стратегии в соответствии с ролью
+        if(user.getUserRoles().getRole().getRole().equals(UserRoles.CLIENT.toString())) {
+            userContext.setUserStrategy(new ClientStrategy(clientService, this));
+        }
     }
     /*
-    Отправка сообщения
+    Отправка сообщения (без кнопок под сообщением)
      */
     private void prepareAndSendMessage(long chatId, String textToSend) {
         SendMessage message = new SendMessage();

@@ -9,12 +9,18 @@ import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
-public class SingUpToLessonChain extends MainWindowChain{
+public class SingUpToLessonChain extends ClientBaseChain{
+    protected final Map<String, String> buttons = new HashMap<>();
+    protected final String textToSend = "Выбери, что ты хочешь сделать:";
 
     public SingUpToLessonChain(ClientService clientService, TelegramBot telegramBot) {
         super(clientService, telegramBot);
+
+        buttons.put(SCHEDULE, SCHEDULE);
+        buttons.put(APPOINTMENT, APPOINTMENT);
     }
 
     @Override
