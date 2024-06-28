@@ -19,9 +19,10 @@ import java.util.stream.Collectors;
 
 @Slf4j
 public abstract class ClientBaseChain implements UserChain {
+    static final String ERROR_MESSAGE = "Error occurred: ";
+
     static final String SCHEDULE = "Посмотреть записи";
     static final String APPOINTMENT = "Записаться";
-    static final String ERROR_MESSAGE = "Error occurred: ";
     static final String BACK_TO_MAIN = "Назад на главную";
     static final String CANCEL_LESSON = "Отменить занятие";
     static final String BACK_TO_LESSONS = "Назад к занятиям";
@@ -136,5 +137,9 @@ public abstract class ClientBaseChain implements UserChain {
             answer = false;
         }
         return answer;
+    }
+
+    protected String getButtonId(String callBackData){
+        return callBackData.split("/")[0];
     }
 }

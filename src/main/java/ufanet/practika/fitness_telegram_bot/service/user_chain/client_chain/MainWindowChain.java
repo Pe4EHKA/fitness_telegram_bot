@@ -43,17 +43,4 @@ public class MainWindowChain extends ClientBaseChain {
             }
         }
     }
-
-    protected void executeSendMessage(long chatId, String textToSend, Map<String, String> buttons) {
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        message.setText(textToSend);
-        message.setReplyMarkup(getButtons(buttons));
-
-        try {
-            telegramBot.execute(message);
-        } catch (TelegramApiException e) {
-            log.error(ERROR_MESSAGE + e.getMessage());
-        }
-    }
 }
