@@ -2,6 +2,7 @@ package ufanet.practika.fitness_telegram_bot.service.user_chain.client_chain;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ufanet.practika.fitness_telegram_bot.entity.Lesson;
+import ufanet.practika.fitness_telegram_bot.entity.User;
 import ufanet.practika.fitness_telegram_bot.service.ClientService;
 import ufanet.practika.fitness_telegram_bot.service.TelegramBot;
 
@@ -27,14 +28,10 @@ public class AdditionalInfoChain extends ClientBaseChain {
             buttons.put(CANCEL_LESSON, CANCEL_LESSON + " " + lesson.getId().toString());
             buttons.put("Назад", BACK_TO_LESSONS);
 
-            String lessonType = lesson.getLessonType().getType();
-            String lessonStart = lesson.getStartDateTime().toString();
-            String lessonEnd = lesson.getEndDateTime().toString();
-            String instructor = lesson.getInstructor().getName();
-            String textToSend = lessonType + "\n"
-                    + lessonStart + "\n"
-                    + lessonEnd + "\n"
-                    + instructor + "\n";
+            User instructor = lesson.getInstructor();
+            String textToSend = lesson.getLessonType().getType() + "\n\n" +
+                    lesson.getLessonType().getDescription() + "\n***\nВаш тренер - " + instructor.getName() + ":\n" +
+                    instructor.getBio();
 
             executeEditMessage(textToSend, chatId, messageId, buttons);
         } else{
