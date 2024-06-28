@@ -128,18 +128,4 @@ public abstract class ClientBaseChain implements UserChain {
 
         executeEditMessage(textToSend, chatId, messageId, clientButtons);
     }
-
-    protected boolean canParseInt(String input) {
-        boolean answer = true;
-        try{
-            Integer.parseInt(input);
-        } catch (NumberFormatException exception) {
-            answer = false;
-        }
-        return answer;
-    }
-
-    protected String getButtonId(String callBackData){
-        return callBackData.split("/")[0];
-    }
 }

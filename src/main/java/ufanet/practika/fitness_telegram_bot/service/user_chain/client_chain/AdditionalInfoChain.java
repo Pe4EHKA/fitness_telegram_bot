@@ -20,7 +20,7 @@ public class AdditionalInfoChain extends ClientBaseChain {
         long messageId = update.getCallbackQuery().getMessage().getMessageId();
 
 
-        if(canParseInt(callBackData) && clientService.isLessonRegistrationExists(chatId, Integer.parseInt(callBackData))) {
+        if(isLessonRegistrationExists(chatId, callBackData)) {
             Lesson lesson = clientService.getLesson(Integer.parseInt(callBackData));
 
             Map<String, String> buttons = new HashMap<>();
@@ -41,6 +41,15 @@ public class AdditionalInfoChain extends ClientBaseChain {
             if(next != null){
                 next.process(update);
             }
+        }
+    }
+
+    private boolean isLessonRegistrationExists(long chatId, String callBackData){
+        try{
+            int lessonId = Integer.parseInt(callBackData);
+            return clientService.isLessonRegistrationExists(chatId, lessonId);
+        } catch (NumberFormatException e){
+            return false;
         }
     }
 }
